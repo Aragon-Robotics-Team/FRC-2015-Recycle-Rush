@@ -19,8 +19,8 @@ public class OI {
 		JoystickButton trigger0 = new JoystickButton(joy0, 1);
 		JoystickButton trigger1 = new JoystickButton(joy1, 1);
 		
-		trigger0.whenPressed(new RotatePositive());
-		trigger1.whenPressed(new RotateNegative());
+		trigger0.whenPressed(new RotatePositive());	//Both of these should function the same in this case, as the command kills when the button is lifted
+		trigger1.whileHeld(new RotateNegative());	
 	}
 }
 
