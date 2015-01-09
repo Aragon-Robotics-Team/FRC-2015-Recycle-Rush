@@ -3,7 +3,6 @@ package org.usfirst.frc.team840.robot.commands;
 import org.usfirst.frc.team840.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
-
 /**
  *	Command to stop the motor. This is mostly just for use as a default command. Stops as
  *	init, then does nothing, as the program will disengage as soon as a new command is
