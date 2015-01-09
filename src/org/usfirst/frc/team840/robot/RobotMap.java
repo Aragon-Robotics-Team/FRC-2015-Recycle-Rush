@@ -7,5 +7,5 @@ package org.usfirst.frc.team840.robot;
  */
 public class RobotMap {
     
-    public static int motor = 1;	//TBD
+    public static int motor = 0;
 }
