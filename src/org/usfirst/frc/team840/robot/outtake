@@ -1,0 +1,18 @@
+public class RobotDrive {
+  Talon rRoller = new Roller(0);//not sure what ports are being used
+  Talon lRoller = new Roller(1);
+  lDouble = new DoubleSolenoid(2, 3);
+  rDouble = new DoubleSolenoid(4, 5, 6);
+  Button rOut = new Button(0);
+  Button lOut = new Butto(1);
+public void OutTake(){
+  if(islOut = true) {
+  lDouble.set(lDouble.Value.kForward);
+  lRoller = 1;
+    }
+  if(isrOut = true) {
+  rDouble.set(rDouble.Value.kForwar);
+  rRoller = 1;
+    }
+  }
+}
