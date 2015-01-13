@@ -1,0 +1,14 @@
+public class RobotDrive {
+  private Talon rRoller = new Roller(0);//not sure what ports are being used
+  private Talon lRoller = new Roller(1);
+  private lIntake = new Button(2);
+  private rIntake = new Button(3);
+  rDouble = new DoubleSolenoid(4,5);
+  lDouble = new DoubleSolenoid(6)
+public void Rollers {
+  if(lIntake);
+    lRoller = 1;
+  if(rIntake);
+    rRoller = 1;
+  }
+}
