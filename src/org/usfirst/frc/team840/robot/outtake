@@ -11,7 +11,7 @@ public void OutTake(){
   lRoller = 1;
     }
   if(isrOut = true) {
-  rDouble.set(rDouble.Value.kForwar);
+  rDouble.set(rDouble.Value.kForward);
   rRoller = 1;
     }
   }
