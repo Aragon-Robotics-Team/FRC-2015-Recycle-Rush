@@ -17,10 +17,10 @@ public class OI {
 	
 	public OI() {
 		JoystickButton trigger0 = new JoystickButton(joy0, 1);
-		JoystickButton trigger1 = new JoystickButton(joy0, 3);
+		JoystickButton trigger1 = new JoystickButton(joy1, 1);
 		
-		trigger0.whileHeld(new RotatePositive());	//Both of these should function the same in this case, as the command kills when the button is lifted
-		trigger1.whileHeld(new RotateNegative());
+		trigger0.whenPressed(new RotatePositive());	//Both of these should function the same in this case, as the command kills when the button is lifted
+		trigger1.whileHeld(new RotateNegative());	
 	}
 }
 
