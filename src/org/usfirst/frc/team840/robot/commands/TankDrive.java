@@ -5,24 +5,23 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *	Command to stop the motor. This is mostly just for use as a default command. Stops as
- *	init, then does nothing, as the program will disengage as soon as a new command is
- *	issued.
+ * A command for the DrivetrainTank. This command drives the chassis using generic tank drive controls. There is no feedback currently. 
  */
-public class Stop extends Command {
+public class TankDrive extends Command {
 
-    public Stop() {
-        requires(Robot.motor);
-        setTimeout(1);	//May or may not need
+    public TankDrive() {
+        // Use requires() here to declare subsystem dependencies
+        requires(Robot.drivetraintank);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.motor.stop();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.drivetraintank.setLeft(Robot.oi.getJoyLeft().getY());
+    	Robot.drivetraintank.setRight(Robot.oi.getJoyRight().getY());
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -37,5 +36,6 @@ public class Stop extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }

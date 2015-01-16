@@ -7,5 +7,7 @@ package org.usfirst.frc.team840.robot;
  */
 public class RobotMap {
     
-    public static int motor = 0;
+	public static final int driveMotorLeft = 0;
+	public static final int driveMotorRight = 1;
+    
 }

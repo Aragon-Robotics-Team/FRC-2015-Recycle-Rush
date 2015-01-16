@@ -1,12 +1,13 @@
 
 package org.usfirst.frc.team840.robot;
 
+import org.usfirst.frc.team840.robot.subsystems.DrivetrainTank;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team840.robot.subsystems.Motor;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -17,8 +18,8 @@ import org.usfirst.frc.team840.robot.subsystems.Motor;
  */
 public class Robot extends IterativeRobot {
 
-	public static Motor motor;
 	public static OI oi;
+	public static DrivetrainTank drivetraintank;
 
     Command autonomousCommand;
 
@@ -27,8 +28,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	motor = new Motor();
-		oi = new OI();
+    	drivetraintank = new DrivetrainTank();
 	}
 	
 	public void disabledPeriodic() {
