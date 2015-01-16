@@ -7,7 +7,12 @@ package org.usfirst.frc.team840.robot;
  */
 public class RobotMap {
     
+    	//Ports on the roboRio
 	public static final int driveMotorLeft = 0;
 	public static final int driveMotorRight = 1;
+	
+	//Multiplier used to correct the direction of motors
+	public static final int driveMotorLeftDir = 1;
+	public static final int driveMotorRightDir = -1;
     
 }
