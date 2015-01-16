@@ -24,7 +24,7 @@ public class TankDrive extends Command {
 
     protected void execute() {
     	if(leftSide) Robot.drivetraintank.setLeft(Robot.oi.getJoyLeft().getY() * powerMultiplier);
-    	else Robot.drivetraintank.setRight(-1 * Robot.oi.getJoyRight().getY()  * powerMultiplier));
+    	else Robot.drivetraintank.setRight(Robot.oi.getJoyRight().getY()  * powerMultiplier));
     }
 
     protected boolean isFinished() {
