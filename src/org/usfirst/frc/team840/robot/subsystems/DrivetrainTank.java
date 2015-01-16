@@ -12,7 +12,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class DrivetrainTank extends Subsystem {
     
-	private Talon driveMotorLeft, driveMotorRight;
+	private Talon driveMotorLeft;
+	private Talon driveMotorRight;
 	
 	public DrivetrainTank() {
 		super();
@@ -30,6 +31,14 @@ public class DrivetrainTank extends Subsystem {
     
     public void setRight(double power) {
     	driveMotorRight.set(power);
+    }
+    
+    public double getLeftSpeed() {
+    	return driveMotorLeft.getSpeed();
+    }
+    
+    public double getRightSpeed() {
+    	return driveMotorRight.getSpeed();
     }
 }
 
