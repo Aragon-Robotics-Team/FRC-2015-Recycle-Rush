@@ -19,8 +19,6 @@ public class OI {
 	
 	
 	public OI() {
-		SmartDashboard.putNumber("Left motor speed: ",DrivetrainTank.driveMotorLeft.getSpeed());
-		SmartDashboard.putNumber("Right motor speed:",DrivetrainTank.driveMotorRight.getSpeed());
 	}
 	
 	public Joystick getJoyLeft() {
