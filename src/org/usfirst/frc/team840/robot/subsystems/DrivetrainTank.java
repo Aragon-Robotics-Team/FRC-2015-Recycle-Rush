@@ -26,11 +26,11 @@ public class DrivetrainTank extends Subsystem {
     }
     
     public void setLeft(double power) {
-    	driveMotorLeft.set(power);
+    	driveMotorLeft.set(power * RobotMap.driveMotorLeftDir);
     }
     
     public void setRight(double power) {
-    	driveMotorRight.set(power);
+    	driveMotorRight.set(power * RobotMap.driveMotorRightDir);
     }
     
     public double getLeftSpeed() {
