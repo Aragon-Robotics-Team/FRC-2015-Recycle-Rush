@@ -1,6 +1,8 @@
 package org.usfirst.frc.team840.robot;
 
 import org.usfirst.frc.team840.robot.subsystems.DrivetrainTank;
+import org.usfirst.frc.team840.robot.commands.TankDrive;
+import org.usfirst.frc.team840.robot.commands.TankDriveCreep;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -15,6 +17,7 @@ public class OI {
 	
 	private Joystick joyLeft = new Joystick(0);
 	private Joystick joyRight = new Joystick(1);
+	private JoystickButton creep = new JoystickButton(2);
 	
 	
 	
@@ -27,5 +30,12 @@ public class OI {
 	public Joystick getJoyRight() {
 		return joyRight;
 	}
+	if(!creep)
+		TankDrive();
+	if(creep){
+		TankDriveCreep(true, 0.5);
+		TankDriveCreep(false, 0.5);
+	}
 }
+
 
