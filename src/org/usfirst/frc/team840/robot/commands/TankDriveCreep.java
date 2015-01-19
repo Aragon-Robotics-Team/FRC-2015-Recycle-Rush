@@ -7,12 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  * A command for the DrivetrainTank. This command drives the chassis using generic tank drive controls at a fraction of the maximum speed. There is no feedback currently. Note that this function only opperates one motor, not both.
  */
-public class TankDrive extends Command {
+public class TankDriveCreep extends Command {
 
   boolean leftSide;
   double powerMultiplier;
   
-    public TankDrive(bool leftSide, double powerMultiplier) { //If leftSide is true, this will engage on the left side only
+    public TankDriveCreep(bool leftSide, double powerMultiplier) { //If leftSide is true, this will engage on the left side only
       this.leftSide = leftSide;
       this.powerMultiplier = powerMultiplier;
     
