@@ -23,8 +23,8 @@ public class OI {
 	
 	
 	public OI() {
-		triggerLeft.whileHeld(new TankDriveCreep(true, 0.5));
-		triggerRight.whileHeld(new TankDriveCreep(false, 0.5));
+		triggerLeft.whileHeld(new TankDriveCreep(true, RobotMap.CREEP_SPEED));
+		triggerRight.whileHeld(new TankDriveCreep(false, RobotMap.CREEP_SPEED));
 	}
 	
 	public Joystick getJoyLeft() {
