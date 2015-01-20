@@ -17,11 +17,14 @@ public class OI {
 	
 	private Joystick joyLeft = new Joystick(0);
 	private Joystick joyRight = new Joystick(1);
-	private JoystickButton creep = new JoystickButton(2);
+	private JoystickButton triggerLeft = new JoystickButton(0, 1);
+	private JoystickButton triggerRight = new JoystickButton(1, 1);
 	
 	
 	
 	public OI() {
+		triggerLeft.whileHeld(new TankDriveCreep(true, 0.5));
+		triggerRight.whileHeld(new TankDriveCreep(false, 0.5));
 	}
 	
 	public Joystick getJoyLeft() {
@@ -29,12 +32,6 @@ public class OI {
 	}
 	public Joystick getJoyRight() {
 		return joyRight;
-	}
-	if(!creep)
-		TankDrive();
-	if(creep){
-		TankDriveCreep(true, 0.5);
-		TankDriveCreep(false, 0.5);
 	}
 }
 
