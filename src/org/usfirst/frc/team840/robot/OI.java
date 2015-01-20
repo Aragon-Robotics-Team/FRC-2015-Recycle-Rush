@@ -20,8 +20,6 @@ public class OI {
 	private JoystickButton triggerLeft = new JoystickButton(0, 1);
 	private JoystickButton triggerRight = new JoystickButton(1, 1);
 	
-	
-	
 	public OI() {
 		triggerLeft.whileHeld(new TankDriveCreep(true, RobotMap.CREEP_SPEED));
 		triggerRight.whileHeld(new TankDriveCreep(false, RobotMap.CREEP_SPEED));
