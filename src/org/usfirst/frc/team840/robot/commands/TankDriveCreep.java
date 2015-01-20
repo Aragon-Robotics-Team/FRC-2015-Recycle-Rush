@@ -14,7 +14,7 @@ public class TankDriveCreep extends Command {
   boolean leftSide;
   double powerMultiplier;
   
-    public TankDriveCreep(bool leftSide, double powerMultiplier) { //If leftSide is true, this will engage on the left side only
+    public TankDriveCreep(bool leftSide, double powerMultiplier) {//If leftSide is true, this will engage on the left side only
       this.leftSide = leftSide;
       this.powerMultiplier = powerMultiplier;
     
