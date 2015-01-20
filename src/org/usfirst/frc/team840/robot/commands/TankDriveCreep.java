@@ -5,7 +5,9 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * A command for the DrivetrainTank. This command drives the chassis using generic tank drive controls at a fraction of the maximum speed. There is no feedback currently. Note that this function only opperates one motor, not both.
+ * A command for the DrivetrainTank. This command drives the chassis using generic tank drive controls
+ * at a fraction of the maximum speed. There is no feedback currently. Note that this function only 
+ * operates one motor, not both.
  */
 public class TankDriveCreep extends Command {
 
