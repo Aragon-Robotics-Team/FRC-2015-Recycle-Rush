@@ -4,7 +4,7 @@ This repository contains the Aragon Robotics Team's 2015 codebase for use in the
 Members
 =====================
 
- #!/bin/bash 
+ #!/bin/bash
 
 echo "Miles P. Olson"
 
