@@ -1,12 +1,9 @@
 package org.usfirst.frc.team840.robot;
 
-import org.usfirst.frc.team840.robot.subsystems.DrivetrainTank;
-import org.usfirst.frc.team840.robot.commands.TankDrive;
 import org.usfirst.frc.team840.robot.commands.TankDriveCreep;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
@@ -27,9 +24,7 @@ public class OI {
 	
 	public OI() {
 		JoystickButton triggerRight = new JoystickButton(joyRight, 1);
-		JoystickButton left2 = new JoystickButton(joyLeft, 2);
 		JoystickButton triggerLeft = new JoystickButton(joyLeft, 1);
-		JoystickButton right2 = new JoystickButton(joyRight, 2);
 		
 		triggerLeft.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
 		triggerRight.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
