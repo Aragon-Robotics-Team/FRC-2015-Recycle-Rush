@@ -3,22 +3,26 @@ FRC-2015-Recycle-Rush
 This repository contains the Aragon Robotics Team's 2015 codebase for use in the game Recycle Rush. Code is written in Java using WPILib's Command-Based Robot structure.
 Members
 =====================
-Miles P. Olson
+#!/bin/bash
 
-Ken Preiser
+echo "Miles P. Olson"
 
-Jason Zhao
+echo "Ken Preiser"
 
-Shirin Amini
+echo "Jason Zhao"
 
-Chris Xiong
+echo "Shirin Amini"
 
-Omar Hussain 
+echo "Chris Xiong"
 
-Ethan Levitt
+echo "Omar Hussain" 
 
-Lily Zhou
+echo "Ethan Levitt"
 
-Karena Zhang
+echo "Lily Zhou"
 
-Sahith Bhamidipati
+echo "Karena Zhang"
+
+exit 0
+
+Sahith Bhamidipati"
