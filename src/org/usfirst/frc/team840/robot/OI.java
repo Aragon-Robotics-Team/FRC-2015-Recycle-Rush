@@ -19,10 +19,14 @@ public class OI {
 	private Joystick joyRight = new Joystick(1);
 	private JoystickButton triggerLeft = new JoystickButton(0, 1);
 	private JoystickButton triggerRight = new JoystickButton(1, 1);
+	private JoystickButton 2Left = new JoystickButton(0, 2);
+	private JoystickButton 2Right = new JoystickButton(1, 2);
 	
 	public OI() {
 		triggerLeft.whileHeld(new TankDriveCreep(true, RobotMap.CREEP_SPEED));
 		triggerRight.whileHeld(new TankDriveCreep(false, RobotMap.CREEP_SPEED));
+		2Left.whileHeld(new TankDrivestStraight());
+		2Right.whileHeld(new TankDriveStraight());
 		
 		SmartDashboard.putData(new TankDrive());
 		SmartDashboard.putData(new TankDriveCreep());
