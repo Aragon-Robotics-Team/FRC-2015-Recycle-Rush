@@ -4,22 +4,22 @@ This repository contains the Aragon Robotics Team's 2015 codebase for use in the
 Members
 =====================
 
-println("Miles P. Olson");
+Miles P. Olson
 
-println("Ken Preiser");
+Ken Preiser
 
-println("Jason Zhao");
+Jason Zhao
 
-println("Shirin Amini");
+Shirin Amini
 
-println("Chris Xiong");
+Chris Xiong
 
-println("Omar Hussain");
+Omar Hussain
 
-println("Ethan Levitt");
+Ethan Levitt
 
-println("Lily Zhou");
+Lily Zhou
 
-println("Karena Zhang");
+Karena Zhang
 
-println("Sahith Bhamidipati");
+Sahith Bhamidipati
