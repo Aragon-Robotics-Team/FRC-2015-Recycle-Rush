@@ -4,7 +4,7 @@ This repository contains the Aragon Robotics Team's 2015 codebase for use in the
 Members
 =====================
 
-##!/bin/bash
+ #!/bin/bash
 
 echo "Miles P. Olson"
 
@@ -24,6 +24,6 @@ echo "Lily Zhou"
 
 echo "Karena Zhang"
 
-exit 0
+echo "Sahith Bhamidipati"
 
-Sahith Bhamidipati"
+exit 0
