@@ -24,8 +24,19 @@ public class TankDriveCreep extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetraintank.setLeft(Robot.oi.getJoyLeft().getY() * power);
-    	Robot.drivetraintank.setRight(Robot.oi.getJoyRight().getY() * power);
+    	double leftSpeed = Robot.oi.getJoyLeft().getY();	//Saved locally for quicker responses (read-write is slow)
+    	double rightSpeed = Robot.oi.getJoyRight().getY();
+    	
+    	//Joystick anti-drift
+    	if(Math.abs(leftSpeed) > .125)
+    		Robot.drivetraintank.setLeft(leftSpeed * power);
+    	else
+    		Robot.drivetraintank.setLeft(0);
+    	
+    	if(Math.abs(rightSpeed) > .125)
+    		Robot.drivetraintank.setRight(rightSpeed * power);
+    	else
+    		Robot.drivetraintank.setRight(0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
