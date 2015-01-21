@@ -10,7 +10,7 @@ Ken Preiser
 Jason Zhao
 
 Shirin Amini
- 
+
 Chris Xiong
 
 Omar Hussain
@@ -21,4 +21,4 @@ Lily Zhou
 
 Karena Zhang
 
-//Sahith Bhamidipati
+Sahith Bhamidipati
