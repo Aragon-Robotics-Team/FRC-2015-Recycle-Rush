@@ -14,7 +14,7 @@ public class TankDriveCreep extends Command {
   boolean leftSide;
   double powerMultiplier;
   
-    public TankDriveCreep(bool leftSide, double powerMultiplier) {
+    public TankDriveCreep(boolean leftSide, double powerMultiplier) {
       this.leftSide = leftSide; //If leftSide is true, this will engage on the left side only
       this.powerMultiplier = powerMultiplier;
     
@@ -26,7 +26,7 @@ public class TankDriveCreep extends Command {
 
     protected void execute() {
     	if(leftSide) Robot.drivetraintank.setLeft(Robot.oi.getJoyLeft().getY() * powerMultiplier);
-    	else Robot.drivetraintank.setRight(Robot.oi.getJoyRight().getY()  * powerMultiplier));
+    	else Robot.drivetraintank.setRight(Robot.oi.getJoyRight().getY()  * powerMultiplier);
     }
 
     protected boolean isFinished() {

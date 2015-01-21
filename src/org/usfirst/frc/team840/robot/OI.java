@@ -3,6 +3,7 @@ package org.usfirst.frc.team840.robot;
 import org.usfirst.frc.team840.robot.subsystems.DrivetrainTank;
 import org.usfirst.frc.team840.robot.commands.TankDrive;
 import org.usfirst.frc.team840.robot.commands.TankDriveCreep;
+import org.usfirst.frc.team840.robot.commands.TankDriveStraight;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -17,19 +18,17 @@ public class OI {
 	
 	private Joystick joyLeft = new Joystick(0);
 	private Joystick joyRight = new Joystick(1);
-	private JoystickButton triggerLeft = new JoystickButton(0, 1);
-	private JoystickButton triggerRight = new JoystickButton(1, 1);
-	private JoystickButton 2Left = new JoystickButton(0, 2);
-	private JoystickButton 2Right = new JoystickButton(1, 2);
+	private JoystickButton triggerLeft = new JoystickButton(joyLeft, 1);
+	private JoystickButton triggerRight = new JoystickButton(joyRight, 1);
+	private JoystickButton left2 = new JoystickButton(joyLeft, 2);
+	private JoystickButton right2 = new JoystickButton(joyRight, 2);
 	
 	public OI() {
 		triggerLeft.whileHeld(new TankDriveCreep(true, RobotMap.CREEP_SPEED));
 		triggerRight.whileHeld(new TankDriveCreep(false, RobotMap.CREEP_SPEED));
-		2Left.whileHeld(new TankDrivestStraight());
-		2Right.whileHeld(new TankDriveStraight());
+		left2.whileHeld(new TankDriveStraight());
+		right2.whileHeld(new TankDriveStraight());
 		
-		SmartDashboard.putData(new TankDrive());
-		SmartDashboard.putData(new TankDriveCreep());
 	}
 	
 	public Joystick getJoyLeft() {
