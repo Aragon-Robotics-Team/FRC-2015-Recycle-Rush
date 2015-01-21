@@ -23,6 +23,9 @@ public class OI {
 	public OI() {
 		triggerLeft.whileHeld(new TankDriveCreep(true, RobotMap.CREEP_SPEED));
 		triggerRight.whileHeld(new TankDriveCreep(false, RobotMap.CREEP_SPEED));
+		
+		SmartDashboard.putData(new TankDrive());
+		SmartDashboard.putData(new TankDriveCreep());
 	}
 	
 	public Joystick getJoyLeft() {
