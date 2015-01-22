@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Robot extends IterativeRobot {
 
 	public static DrivetrainTank drivetraintank;
+	public static Accelerometer accelerometer;
 	public static OI oi;
 
     Command autonomousCommand;
