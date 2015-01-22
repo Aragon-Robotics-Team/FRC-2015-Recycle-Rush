@@ -79,6 +79,7 @@ public class Robot extends IterativeRobot {
         xDist += accelerometer.getXAcc() * seconds * seconds;
         yDist += accelerometer.getYAcc() * seconds * seconds;
         zDist += accelerometer.getZAcc() * seconds * seconds;
+        Timer.delay(seconds);
     }
     
     /**
