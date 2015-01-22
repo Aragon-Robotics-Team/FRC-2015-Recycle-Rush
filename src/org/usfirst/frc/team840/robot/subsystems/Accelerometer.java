@@ -18,7 +18,6 @@ public class Accelerometer extends Subsystem {
 	}
 	
     public void initDefaultCommand() {
-        setDefaultCommand();
     }
     
     public double getXAcc() {
