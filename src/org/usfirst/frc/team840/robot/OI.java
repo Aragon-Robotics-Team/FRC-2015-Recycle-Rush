@@ -3,6 +3,7 @@ package org.usfirst.frc.team840.robot;
 import org.usfirst.frc.team840.robot.commands.TankDriveCreep;
 import org.usfirst.frc.team840.robot.subsystems.Accelerometer;
 
+import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -15,7 +16,7 @@ public class OI {
 	
 	private Joystick joyLeft = new Joystick(0);
 	private Joystick joyRight = new Joystick(1);
-	private SmartDashboard sd = new SmartDashboard;
+	private DriverStationLCD ds = new DriverStationLCD;
 	
 	public Joystick getJoyLeft() {
 		return joyLeft;
@@ -31,6 +32,6 @@ public class OI {
 		
 		triggerLeft.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
 		triggerRight.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
-		sd.putData(Accelerometer);
+		println(ds.Line kUser1, 1, String "Speed: " + accelerometer);
 	}
 }
