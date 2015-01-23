@@ -16,7 +16,6 @@ public class OI {
 	
 	private Joystick joyLeft = new Joystick(0);
 	private Joystick joyRight = new Joystick(1);
-	private DriverStationLCD ds = new DriverStationLCD;
 	
 	public Joystick getJoyLeft() {
 		return joyLeft;
@@ -32,6 +31,9 @@ public class OI {
 		
 		triggerLeft.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
 		triggerRight.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
-		println(ds.Line kUser1, 1, String "Speed: " + accelerometer);
+		
+		SmartDashboard.putNumber("X Distance",Robot.xDist);
+		SmartDashboard.putNumber("Y Distance",Robot.yDist);
+		SmartDashboard.putNumber("Z Distance",Robot.zDist);
 	}
 }
