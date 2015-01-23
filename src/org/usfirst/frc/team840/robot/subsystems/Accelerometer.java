@@ -28,7 +28,7 @@ public class Accelerometer extends Subsystem {
         return acc.getY();
     }
     
-    public double getZAcc() {
-        return acc.getZ();
-    }
+//    public double getZAcc() {
+  //      return acc.getZ();
+    //}
 }
