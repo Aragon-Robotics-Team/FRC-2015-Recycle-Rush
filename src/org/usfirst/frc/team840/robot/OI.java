@@ -25,8 +25,12 @@ public class OI {
 	public OI() {
 		JoystickButton triggerRight = new JoystickButton(joyRight, 1);
 		JoystickButton triggerLeft = new JoystickButton(joyLeft, 1);
+		JoystickButton left2 = new JoystickButton(joyLeft, 2);
+		JoystickButton right2 = new JoystickButton(joyRight, 2);		
 		
 		triggerLeft.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
 		triggerRight.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
+		left2.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED_ULTRA));
+		right2.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED_ULTRA));
 	}
 }

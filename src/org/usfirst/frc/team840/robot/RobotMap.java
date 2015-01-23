@@ -17,5 +17,6 @@ public class RobotMap {
 	
 	//Multiplier used for slower speed control
 	public static final double CREEP_SPEED = 0.5;
+	public static final double CREEP_SPEED_ULTRA = .125;
     
 }
