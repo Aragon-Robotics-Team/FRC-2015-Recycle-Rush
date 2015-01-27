@@ -1,8 +1,7 @@
 
-package org.usfirst.frc.team840.robot;
+package edu.art.frc.recycleRush.robot;
 
-import org.usfirst.frc.team840.robot.subsystems.DrivetrainTank;
-
+import edu.art.frc.recycleRush.robot.subsystems.DrivetrainTank;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;

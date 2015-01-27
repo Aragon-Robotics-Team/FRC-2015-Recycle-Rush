@@ -1,9 +1,8 @@
-package org.usfirst.frc.team840.robot.commands;
+package edu.art.frc.recycleRush.robot.commands;
 
 import java.lang.Math;
 
-import org.usfirst.frc.team840.robot.Robot;
-
+import edu.art.frc.recycleRush.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**

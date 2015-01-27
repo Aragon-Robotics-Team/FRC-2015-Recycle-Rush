@@ -1,7 +1,6 @@
-package org.usfirst.frc.team840.robot;
+package edu.art.frc.recycleRush.robot;
 
-import org.usfirst.frc.team840.robot.commands.TankDriveCreep;
-
+import edu.art.frc.recycleRush.robot.commands.TankDriveCreep;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 

@@ -1,8 +1,7 @@
-package org.usfirst.frc.team840.robot.subsystems;
+package edu.art.frc.recycleRush.robot.subsystems;
 
-import org.usfirst.frc.team840.robot.RobotMap;
-import org.usfirst.frc.team840.robot.commands.TankDrive;
-
+import edu.art.frc.recycleRush.robot.RobotMap;
+import edu.art.frc.recycleRush.robot.commands.TankDrive;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
