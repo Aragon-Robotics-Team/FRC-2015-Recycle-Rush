@@ -1,7 +1,7 @@
 
 package edu.art.frc.recycleRush.robot;
 
-import edu.art.frc.recycleRush.robot.subsystems.DrivetrainTank;
+import edu.art.frc.recycleRush.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -17,7 +17,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 
-	public static DrivetrainTank drivetraintank;
+	public static Drivetrain drivetraintank;
 	public static OI oi;
 
     Command autonomousCommand;
@@ -27,7 +27,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	drivetraintank = new DrivetrainTank();
+    	drivetraintank = new Drivetrain();
     	oi = new OI();
     	
 	}

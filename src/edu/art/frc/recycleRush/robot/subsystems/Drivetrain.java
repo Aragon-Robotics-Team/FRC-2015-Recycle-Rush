@@ -9,12 +9,12 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *	Drivetrain for the robot. It is unsure at this time what the final drivetrain will be, so we will program one using standard
  *	two motor tank. This drivtrain uses the TalonSRX motor controllers. At this time, there are no sensors.
  */
-public class DrivetrainTank extends Subsystem {
+public class Drivetrain extends Subsystem {
     
 	private Talon driveMotorLeft;
 	private Talon driveMotorRight;
 	
-	public DrivetrainTank() {
+	public Drivetrain() {
 		super();
 		driveMotorLeft = new Talon(RobotMap.driveMotorLeft);
 		driveMotorRight = new Talon(RobotMap.driveMotorRight);
