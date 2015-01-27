@@ -1,17 +1,14 @@
 package edu.art.frc.recycleRush.robot.commands;
 
-import java.lang.Math;
-
 import edu.art.frc.recycleRush.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * A command for the DrivetrainTank. This command drives the chassis using generic tank drive controls. There is no feedback currently. 
+ *
  */
-public class TankDrive extends Command {
+public class ArcadeDrive extends Command {
 
-    public TankDrive() {
-        // Use requires() here to declare subsystem dependencies
+    public ArcadeDrive() {
         requires(Robot.drivetrain);
     }
 
@@ -21,19 +18,7 @@ public class TankDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double leftSpeed = Robot.oi.getJoyLeft().getY();	//Saved locally for quicker responses (read-write is slow)
-    	double rightSpeed = Robot.oi.getJoyRight().getY();
-    	
-    	//Joystick anti-drift
-    	if(Math.abs(leftSpeed) > .125)
-    		Robot.drivetrain.setLeft(leftSpeed);
-    	else
-    		Robot.drivetrain.setLeft(0);
-    	
-    	if(Math.abs(rightSpeed) > .125)
-    		Robot.drivetrain.setRight(rightSpeed);
-    	else
-    		Robot.drivetrain.setRight(0);
+    	Robot.drivetrain.arcadeDrive(Robot.oi.getGamepad().getLeftY() * -1, Robot.oi.getGamepad().getRightX() * -1);	//Inverted for easier driving
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -48,6 +33,5 @@ public class TankDrive extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	end();
     }
 }

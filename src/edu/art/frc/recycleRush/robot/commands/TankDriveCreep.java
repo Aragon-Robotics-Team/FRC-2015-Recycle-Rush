@@ -13,7 +13,7 @@ public class TankDriveCreep extends Command {
     public TankDriveCreep(double power) {
     	this.power = power;
     	
-        requires(Robot.drivetraintank);
+        requires(Robot.drivetrain);
     }
 
     // Called just before this Command runs the first time
@@ -27,14 +27,14 @@ public class TankDriveCreep extends Command {
     	
     	//Joystick anti-drift
     	if(Math.abs(leftSpeed) > .125)
-    		Robot.drivetraintank.setLeft(leftSpeed * power);
+    		Robot.drivetrain.setLeft(leftSpeed * power);
     	else
-    		Robot.drivetraintank.setLeft(0);
+    		Robot.drivetrain.setLeft(0);
     	
     	if(Math.abs(rightSpeed) > .125)
-    		Robot.drivetraintank.setRight(rightSpeed * power);
+    		Robot.drivetrain.setRight(rightSpeed * power);
     	else
-    		Robot.drivetraintank.setRight(0);
+    		Robot.drivetrain.setRight(0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -7,7 +7,7 @@ package edu.art.frc.recycleRush.robot;
  */
 public class RobotMap {
     
-    	//Ports on the roboRio
+    //Ports on the roboRio
 	public static final int driveMotorLeft = 0;
 	public static final int driveMotorRight = 1;
 	

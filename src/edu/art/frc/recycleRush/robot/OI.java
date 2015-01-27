@@ -1,5 +1,6 @@
 package edu.art.frc.recycleRush.robot;
 
+import edu.art.frc.lib.util.Gamepad;
 import edu.art.frc.recycleRush.robot.commands.TankDriveCreep;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -13,12 +14,16 @@ public class OI {
 	
 	private Joystick joyLeft = new Joystick(0);
 	private Joystick joyRight = new Joystick(1);
+	private Gamepad gamepad = new Gamepad(2);
 	
 	public Joystick getJoyLeft() {
 		return joyLeft;
 	}
 	public Joystick getJoyRight() {
 		return joyRight;
+	}
+	public Gamepad getGamepad() {
+		return gamepad;
 	}
 	
 	public OI() {

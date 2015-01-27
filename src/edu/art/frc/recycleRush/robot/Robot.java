@@ -17,7 +17,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 
-	public static Drivetrain drivetraintank;
+	public static Drivetrain drivetrain;
 	public static OI oi;
 
     Command autonomousCommand;
@@ -27,7 +27,7 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	drivetraintank = new Drivetrain();
+    	drivetrain = new Drivetrain();
     	oi = new OI();
     	
 	}
