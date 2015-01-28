@@ -32,8 +32,8 @@ public class ArcadeDrive extends Command {
     	targetPower = Robot.oi.getGamepad().getLeftY();
     	targetTurn = Robot.oi.getGamepad().getRightY();
     	
-    	lerpedPower = Interpolation.lerp(currentPower, targetPower, .25);	//TODO Tune percent
-    	lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, .25);
+    	lerpedPower = Interpolation.lerp(currentPower, targetPower, .025);	//TODO Tune percent
+    	lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, .025);
     	
     	Robot.drivetrain.arcadeDrive(lerpedPower * -1, lerpedTurn * -1);	//Inverted for easier driving
     	
