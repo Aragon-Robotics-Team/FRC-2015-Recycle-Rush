@@ -5,9 +5,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import edu.art.frc.lib.util.Interpolation;
 
-/**
- *
- */
 public class ArcadeDrive extends Command {
 
 	private double currentPower;
