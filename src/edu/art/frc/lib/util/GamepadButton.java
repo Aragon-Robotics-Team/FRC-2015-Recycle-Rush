@@ -13,7 +13,7 @@ public class GamepadButton extends JoystickButton {
 		super(gamepad, buttonNumber(buttonName));
 	}
 	
-	private static int buttonNumber(String buttonName) {
+	private static int buttonNumber(String buttonName) {	//TODO If buttons are added to Gamepad.java, add them to the constructor helper as well.
 		switch(buttonName) {
 		case "A":
 			return 2;

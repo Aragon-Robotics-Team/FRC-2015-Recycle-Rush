@@ -12,7 +12,7 @@ public class Gamepad extends Joystick {
 	}
 
 	
-	//4 axis on the dual thumb-sticks
+	//4 axes on the dual thumb-sticks
 	public double getLeftX() {
 		return getRawAxis(1);
 	}
@@ -46,7 +46,6 @@ public class Gamepad extends Joystick {
 		return getRawButton(4);
 	}
 	
-	
 	//Back of controller
 	public boolean getLeftBumper() {
 		return getRawButton(5);
@@ -63,4 +62,7 @@ public class Gamepad extends Joystick {
 	public boolean getRightTrigger() {
 		return getRawButton(8);
 	}
+	
+	//TODO D-pad
+	//TODO Start, select, etc
 }

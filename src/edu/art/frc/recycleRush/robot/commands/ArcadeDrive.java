@@ -26,6 +26,7 @@ public class ArcadeDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	//TODO Add deadband
     	targetPower = Robot.oi.getGamepad().getLeftY();
     	targetTurn = Robot.oi.getGamepad().getRightY();
     	
