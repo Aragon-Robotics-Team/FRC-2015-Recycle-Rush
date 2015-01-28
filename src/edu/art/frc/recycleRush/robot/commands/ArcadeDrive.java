@@ -14,6 +14,8 @@ public class ArcadeDrive extends Command {
 	private double targetPower;
 	private double currentTurn;
 	private double targetTurn;
+	private double lerpedPower;
+	private double lerpedTurn;
 	
     public ArcadeDrive() {
         requires(Robot.drivetrain);
@@ -30,11 +32,13 @@ public class ArcadeDrive extends Command {
     	targetPower = Robot.oi.getGamepad().getLeftY();
     	targetTurn = Robot.oi.getGamepad().getRightY();
     	
-    	//TODO Tune percent
-    	Robot.drivetrain.arcadeDrive(Interpolation.lerp(currentPower, targetPower, .25) * -1, Interpolation.lerp(currentTurn, targetTurn, .25) * -1);	//Inverted for easier driving
+    	lerpedPower = Interpolation.lerp(currentPower, targetPower, .25);	//TODO Tune percent
+    	lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, .25);
     	
-    	currentPower = Interpolation.lerp(currentPower, targetPower, .25);
-    	currentTurn = Interpolation.lerp(currentTurn, targetTurn, .25);
+    	Robot.drivetrain.arcadeDrive(lerpedPower * -1, lerpedTurn * -1);	//Inverted for easier driving
+    	
+    	currentPower = lerpedPower;
+    	currentTurn = lerpedTurn;
     }
 
     // Make this return true when this Command no longer needs to run execute()
