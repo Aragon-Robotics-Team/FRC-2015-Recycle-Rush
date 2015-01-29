@@ -83,4 +83,21 @@ public class Gamepad extends Joystick {
 	public int getDPadAngle() {
 		return getPOV(0);
 	}
+	
+	public boolean getDPadLeft() {
+		if (getDPadAngle() == 180) return true;
+		return false;
+	}
+	public boolean getDPadRight() {
+		if (getDPadAngle() == 0) return true;
+		return false; 
+	}
+	public boolean getDPadUp() {
+		if (getDPadAngle() == 90) return true;
+		return false;
+	}
+	public boolean getDPadDown() {
+		if (getDPadAngle() == 270) return true;
+		return false;
+	}
 }
