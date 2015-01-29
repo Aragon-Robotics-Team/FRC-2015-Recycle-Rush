@@ -3,6 +3,8 @@ package edu.art.frc.recycleRush.robot.commands;
 import edu.art.frc.recycleRush.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
+import java.lang.Math;
+
 import edu.art.frc.lib.util.Interpolation;
 
 public class ArcadeDrive extends Command {
@@ -28,7 +30,9 @@ public class ArcadeDrive extends Command {
     protected void execute() {
     	//TODO Add deadband
     	targetPower = Robot.oi.getGamepad().getLeftY();
+    	if (Math.abs(targetPower) < .125) targetPower = 0;
     	targetTurn = Robot.oi.getGamepad().getRightY();
+    	if (Math.abs(targetTurn) < .125) targetTurn = 0;
     	
     	lerpedPower = Interpolation.lerp(currentPower, targetPower, .025);	//TODO Tune percent
     	lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, .025);

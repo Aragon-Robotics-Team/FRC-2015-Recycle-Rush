@@ -46,6 +46,22 @@ public class Gamepad extends Joystick {
 		return getRawButton(4);
 	}
 	
+	public boolean getButtonBack() {
+		return getRawButton(9);
+	}
+	
+	public boolean getButtonStart() {
+		return getRawButton(10);
+	}
+	
+	public boolean getButtonLeftJoystick() {
+		return getRawButton(11);
+	}
+	
+	public boolean getButtonRightJoystick() {
+		return getRawButton(12);
+	}
+	
 	//Back of controller
 	public boolean getLeftBumper() {
 		return getRawButton(5);
@@ -63,6 +79,8 @@ public class Gamepad extends Joystick {
 		return getRawButton(8);
 	}
 	
-	//TODO D-pad
-	//TODO Start, select, etc
+	//D-pad
+	public int getDPadAngle() {
+		return getPOV(0);
+	}
 }
