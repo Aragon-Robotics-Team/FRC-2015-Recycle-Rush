@@ -1,18 +1,18 @@
-package edu.art.frc.recycleRush.robot.commands;
+package org.usfirst.frc.team840.robot.commands;
 
-import edu.art.frc.recycleRush.robot.Robot;
+import java.lang.Math;
+
+import org.usfirst.frc.team840.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * A command for the DrivetrainTank. This command drives the chassis using generic tank drive controls at a fraction of the full speed. There is no feedback currently. 
+ * A command for the DrivetrainTank. This command drives the chassis using generic tank drive controls. There is no feedback currently. 
  */
-public class TankDriveCreep extends Command {
+public class TankDrive extends Command {
 
-	private double power;
-	
-    public TankDriveCreep(double power) {
-    	this.power = power;
-    	
+    public TankDrive() {
+        // Use requires() here to declare subsystem dependencies
         requires(Robot.drivetrain);
     }
 
@@ -27,12 +27,12 @@ public class TankDriveCreep extends Command {
     	
     	//Joystick anti-drift
     	if(Math.abs(leftSpeed) > .125)
-    		Robot.drivetrain.setLeft(leftSpeed * power);
+    		Robot.drivetrain.setLeft(leftSpeed);
     	else
     		Robot.drivetrain.setLeft(0);
     	
     	if(Math.abs(rightSpeed) > .125)
-    		Robot.drivetrain.setRight(rightSpeed * power);
+    		Robot.drivetrain.setRight(rightSpeed);
     	else
     		Robot.drivetrain.setRight(0);
     }
@@ -49,5 +49,6 @@ public class TankDriveCreep extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }
