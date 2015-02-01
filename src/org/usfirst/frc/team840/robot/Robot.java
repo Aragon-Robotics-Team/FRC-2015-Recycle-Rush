@@ -4,6 +4,7 @@ package org.usfirst.frc.team840.robot;
 import org.usfirst.frc.team840.robot.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Preferences;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -19,8 +20,13 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Robot extends IterativeRobot {
 
 	public static Drivetrain drivetrain;
+	
 	public static OI oi;
-
+	
+	private Preferences userPreferences;
+	public static double lerpFactor;
+	public static double creepFactor;
+	
     Command autonomousCommand;
 
     /**
@@ -28,9 +34,11 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
+    	lerpFactor = userPreferences.getDouble("Drive Smoothing (0 - 1)", .125);
+    	creepFactor = userPreferences.getDouble("Creep Factor (0 - 1)", 0.5);
+    	
     	drivetrain = new Drivetrain();
     	oi = new OI();
-    	
 	}
 	
 	public void disabledPeriodic() {

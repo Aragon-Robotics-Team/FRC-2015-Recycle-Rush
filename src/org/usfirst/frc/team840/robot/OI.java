@@ -1,11 +1,10 @@
 package org.usfirst.frc.team840.robot;
 
-import org.usfirst.frc.team840.robot.RobotMap;
-import org.usfirst.frc.team840.robot.commands.TankDriveCreep;
+import org.usfirst.frc.team840.robot.commands.ArcadeDriveCreep;
 
 import edu.art.frc.lib.util.Gamepad;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.art.frc.lib.util.GamepadButton;
+
 
 
 /**
@@ -14,29 +13,17 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
 	
-	private Joystick joyLeft = new Joystick(0);
-	private Joystick joyRight = new Joystick(1);
-	private Gamepad gamepad = new Gamepad(2);
+	private Gamepad gamepad = new Gamepad(0);
 	
-	public Joystick getJoyLeft() {
-		return joyLeft;
-	}
-	public Joystick getJoyRight() {
-		return joyRight;
-	}
 	public Gamepad getGamepad() {
 		return gamepad;
 	}
 	
 	public OI() {
-		JoystickButton triggerRight = new JoystickButton(joyRight, 1);
-		JoystickButton triggerLeft = new JoystickButton(joyLeft, 1);
-		JoystickButton left2 = new JoystickButton(joyLeft, 2);
-		JoystickButton right2 = new JoystickButton(joyRight, 2);		
+		GamepadButton leftStick = new GamepadButton(gamepad, "LEFT_JOYSTICK");
+		GamepadButton rightStick = new GamepadButton(gamepad, "RIGHT_JOYSTICK");
 		
-		triggerLeft.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
-		triggerRight.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
-		left2.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED_ULTRA));
-		right2.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED_ULTRA));
+		leftStick.toggleWhenActive(new ArcadeDriveCreep());
+		rightStick.toggleWhenActive(new ArcadeDriveCreep());
 	}
 }

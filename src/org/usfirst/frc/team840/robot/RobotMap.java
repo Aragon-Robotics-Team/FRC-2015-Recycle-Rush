@@ -14,9 +14,5 @@ public class RobotMap {
 	//Multiplier used to correct the direction of motors
 	public static final int driveMotorLeftDir = 1;
 	public static final int driveMotorRightDir = -1;
-	
-	//Multiplier used for slower speed control
-	public static final double CREEP_SPEED = 0.5;
-	public static final double CREEP_SPEED_ULTRA = .125;
     
 }

@@ -8,7 +8,7 @@ import org.usfirst.frc.team840.robot.Robot;
 
 import edu.art.frc.lib.util.Interpolation;
 
-public class ArcadeDrive extends Command {
+public class ArcadeDriveCreep extends Command {
 
 	private double currentPower;
 	private double targetPower;
@@ -17,7 +17,7 @@ public class ArcadeDrive extends Command {
 	private double lerpedPower;
 	private double lerpedTurn;
 	
-    public ArcadeDrive() {
+    public ArcadeDriveCreep() {	
         requires(Robot.drivetrain);
     }
 
@@ -30,14 +30,14 @@ public class ArcadeDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	targetPower = Robot.oi.getGamepad().getLeftY();
-    	if (Math.abs(targetPower) < .0625) targetPower = 0;
+    	if (Math.abs(targetPower) < .125) targetPower = 0;
     	targetTurn = Robot.oi.getGamepad().getRightY();
-    	if (Math.abs(targetTurn) < .0625) targetTurn = 0;
+    	if (Math.abs(targetTurn) < .125) targetTurn = 0;
     	
     	lerpedPower = Interpolation.lerp(currentPower, targetPower, Robot.lerpFactor);
     	lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, Robot.lerpFactor);
     	
-    	Robot.drivetrain.arcadeDrive(lerpedPower * -1, lerpedTurn * -1);	//Inverted for easier driving
+    	Robot.drivetrain.arcadeDrive(lerpedPower * Robot.creepFactor *  -1, lerpedTurn * Robot.creepFactor * -1);	//Inverted for easier driving
     	
     	currentPower = lerpedPower;
     	currentTurn = lerpedTurn;

@@ -9,6 +9,4 @@ public abstract class Interpolation {
 		return current + percent * (target - current);
 	}
 	
-	//TODO Add Brandon's algorithm if the above does not work.
-
 }
