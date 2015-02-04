@@ -23,7 +23,7 @@ public class Robot extends IterativeRobot {
 	
 	public static OI oi;
 	
-	private Preferences userPreferences;
+	//private Preferences userPreferences;
 	public static double lerpFactor;
 	public static double creepFactor;
 	
@@ -34,8 +34,10 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	lerpFactor = userPreferences.getDouble("Drive Smoothing (0 - 1)", .125);
-    	creepFactor = userPreferences.getDouble("Creep Factor (0 - 1)", 0.5);
+    	lerpFactor = .125;
+    	creepFactor = .5;
+    	//lerpFactor = userPreferences.getDouble("Drive Smoothing (0 - 1)", .125);
+    	//creepFactor = userPreferences.getDouble("Creep Factor (0 - 1)", 0.5);
     	
     	drivetrain = new Drivetrain();
     	oi = new OI();

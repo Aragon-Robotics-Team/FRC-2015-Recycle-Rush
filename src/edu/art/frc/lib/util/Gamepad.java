@@ -14,19 +14,19 @@ public class Gamepad extends Joystick {
 	
 	//4 axes on the dual thumb-sticks
 	public double getLeftX() {
-		return getRawAxis(1);
+		return getRawAxis(0);
 	}
 	
 	public double getLeftY() {
-		return getRawAxis(2);
+		return getRawAxis(1);
 	}
 	
 	public double getRightX() {
-		return getRawAxis(4);
+		return getRawAxis(2);
 	}
 	
 	public double getRightY() {
-		return getRawAxis(5);
+		return getRawAxis(3);
 	}
 	
 	//Joystick buttons

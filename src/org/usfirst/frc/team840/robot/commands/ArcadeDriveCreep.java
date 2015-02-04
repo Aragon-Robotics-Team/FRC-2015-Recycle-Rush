@@ -33,7 +33,7 @@ public class ArcadeDriveCreep extends Command {
     protected void execute() {
     	targetPower = Robot.oi.getGamepad().getLeftY();
     	if (Math.abs(targetPower) < .0625) targetPower = 0;
-    	targetTurn = Robot.oi.getGamepad().getRightY();
+    	targetTurn = Robot.oi.getGamepad().getRightX();
     	if (Math.abs(targetTurn) < .0625) targetTurn = 0;
     	
     	lerpedPower = Interpolation.lerp(currentPower, targetPower, Robot.lerpFactor);
