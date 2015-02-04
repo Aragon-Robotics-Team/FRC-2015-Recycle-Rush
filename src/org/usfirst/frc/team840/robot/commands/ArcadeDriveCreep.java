@@ -1,13 +1,10 @@
 package org.usfirst.frc.team840.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-import java.lang.Math;
-
 import org.usfirst.frc.team840.robot.Robot;
 
 import edu.art.frc.lib.util.Interpolation;
+import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class ArcadeDriveCreep extends Command {
 
