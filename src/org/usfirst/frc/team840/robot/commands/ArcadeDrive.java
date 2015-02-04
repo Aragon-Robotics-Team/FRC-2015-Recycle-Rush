@@ -24,7 +24,7 @@ public class ArcadeDrive extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	SmartDashboard.putString("Driving mode", "Standard");
+    	SmartDashboard.putString("Driving mode: ", "Standard");
     	currentPower = 0;
     	currentTurn = 0;
     }

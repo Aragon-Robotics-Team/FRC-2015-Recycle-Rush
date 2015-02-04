@@ -24,7 +24,7 @@ public class ArcadeDriveCreep extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	SmartDashboard.putString("Driving mode", "Creeping at " + Robot.creepFactor * 100 + "% power");
+    	SmartDashboard.putString("Driving mode: ", "Creeping at " + Robot.creepFactor * 100 + "% power");
     	currentPower = 0;
     	currentTurn = 0;
     }
