@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  *	Drivetrain for the robot. It is unsure at this time what the final drivetrain will be, so we will program one using standard
- *	two motor tank. This drivtrain uses the Talon motor controllers. At this time, there are no sensors.
+ *	two motor tank. This drivetrain uses the Talon motor controllers. At this time, there are no sensors.
  */
 public class Drivetrain extends Subsystem {
     
