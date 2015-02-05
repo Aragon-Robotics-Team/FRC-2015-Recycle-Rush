@@ -18,8 +18,8 @@ public class Drivetrain extends Subsystem {
 	
 	public Drivetrain() {
 		super();
-		driveMotorLeft = new Talon(RobotMap.driveMotorLeft);
-		driveMotorRight = new Talon(RobotMap.driveMotorRight);
+		driveMotorLeft = new Talon(RobotMap.driveMotorLeft[0]);
+		driveMotorRight = new Talon(RobotMap.driveMotorRight[0]);
 		drive = new RobotDrive(driveMotorLeft, driveMotorRight);
 	}
 	
@@ -28,11 +28,11 @@ public class Drivetrain extends Subsystem {
     }
     
     public void setLeft(double power) {
-    	driveMotorLeft.set(power * RobotMap.driveMotorLeftDir);
+    	driveMotorLeft.set(power * RobotMap.driveMotorLeft[1]);
     }
     
     public void setRight(double power) {
-    	driveMotorRight.set(power * RobotMap.driveMotorRightDir);
+    	driveMotorRight.set(power * RobotMap.driveMotorRight[1]);
     }
     
     public void arcadeDrive(double power, double turn) {
