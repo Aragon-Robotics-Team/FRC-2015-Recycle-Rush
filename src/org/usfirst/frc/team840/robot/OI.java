@@ -32,6 +32,9 @@ public class OI {
 		triggerLeft.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
 		triggerRight.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
 		
+		SmartDashboard.putNumber("X Acceleration",Robot.xAcc);
+		SmartDashboard.putNumber("Y Acceleration",Robot.yAcc);
+		SmartDashboard.putNumber("Z Acceleration", Robot.zAcc);
 		SmartDashboard.putNumber("X Distance",Robot.xDist);
 		SmartDashboard.putNumber("Y Distance",Robot.yDist);
 		SmartDashboard.putNumber("Z Distance", Robot.zDist);
