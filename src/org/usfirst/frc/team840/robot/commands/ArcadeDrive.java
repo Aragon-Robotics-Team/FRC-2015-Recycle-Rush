@@ -15,7 +15,7 @@ public class ArcadeDrive extends Command {
 	private double lerpedPower;
 	private double lerpedTurn;
 	
-    public ArcadeDrive() {
+public ArcadeDrive() {
         requires(Robot.drivetrain);
     }
 
@@ -36,7 +36,9 @@ public class ArcadeDrive extends Command {
     	lerpedPower = Interpolation.lerp(currentPower, targetPower, Robot.lerpFactor);
     	lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, Robot.lerpFactor);
     	
-    	Robot.drivetrain.arcadeDrive(lerpedPower * -1, lerpedTurn * -1);	//Inverted for easier driving
+    	//Inverted for easier driving
+    	
+    	Robot.drivetrain.arcadeDrive(lerpedPower * -1, lerpedTurn * -1);
     	
     	currentPower = lerpedPower;
     	currentTurn = lerpedTurn;
