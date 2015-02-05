@@ -8,19 +8,13 @@ package org.usfirst.frc.team840.robot;
  */
 public class RobotMap {
     
-    //Ports on the roboRio
-	public static final int driveMotorLeft = 0;
-	public static final int driveMotorRight = 1;
-	public static final int liftMotor = 2;
+    //Ports on the roboRio, and multiplier
+	public static final int[] driveMotorLeft = {0,1};
+	public static final int[] driveMotorRight = {0,-1};
+	public static final int[] liftMotor = {0,1};
 	
-	public static final int slidingCylinder0 = 0;
-	public static final int slidingCylinder1 = 1;
+	public static final int[] slidingCylinder = {0,1};
 	
-	public static final int liftEncoder0 = 0;
-	public static final int liftEncoder1 = 1;	
-	
-	//Multipliers used to correct the direction of motors
-	public static final int driveMotorLeftDir = 1;
-	public static final int driveMotorRightDir = -1;
+	public static final int[] liftEncoder = {0,1};
     
 }

@@ -19,9 +19,9 @@ public class Stacker extends PIDSubsystem {
     // Initialize your subsystem here
     public Stacker() {
         super("Stacker", 2.0, 0.0, 0.0);	//TODO Tune PID constants
-        liftMotor = new Talon(RobotMap.liftMotor);
-        liftEncoder = new Encoder(RobotMap.liftEncoder0, RobotMap.liftEncoder1);
-        sliderCylinders = new DoubleSolenoid(RobotMap.slidingCylinder0,RobotMap.slidingCylinder1);
+        liftMotor = new Talon(RobotMap.liftMotor[0]);
+        liftEncoder = new Encoder(RobotMap.liftEncoder[0], RobotMap.liftEncoder[0]);
+        sliderCylinders = new DoubleSolenoid(RobotMap.slidingCylinder[0],RobotMap.slidingCylinder[0]);
         
         liftEncoder.setDistancePerPulse(840);	//TODO Tune experimentally
     }
