@@ -5,8 +5,8 @@ package edu.art.frc.lib.util;
  */
 public abstract class Interpolation {
 	
-	public static double lerp(double current, double target, double percent) {
-		return current + percent * (target - current);
+	public static double lerp(double current, double target, double factor) {
+		return current + factor * (target - current);
 	}
 	
 }

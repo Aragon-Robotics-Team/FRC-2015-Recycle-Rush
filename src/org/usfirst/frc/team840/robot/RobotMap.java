@@ -1,4 +1,5 @@
 package org.usfirst.frc.team840.robot;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -11,7 +12,7 @@ public class RobotMap {
 	public static final int driveMotorLeft = 0;
 	public static final int driveMotorRight = 1;
 	
-	//Multiplier used to correct the direction of motors
+	//Multipliers used to correct the direction of motors
 	public static final int driveMotorLeftDir = 1;
 	public static final int driveMotorRightDir = -1;
     
