@@ -25,6 +25,9 @@ public class Robot extends IterativeRobot {
 	public double xDist = 0.0;
 	public double yDist = 0.0;
 	public double zDist = 0.0;
+	public double xAcc = 0.0;
+	public double yAcc = 0.0;
+	public double zAcc = 0.0;
 	public double seconds = 0.005;
 
     Command autonomousCommand;
@@ -76,9 +79,12 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        xDist += accelerometer.getXAcc() * seconds * seconds;
-        yDist += accelerometer.getYAcc() * seconds * seconds;
-        zDist += accelerometer.getZAcc() * seconds * seconds;
+        xAcc = accelerometer.getXAcc();
+        yAcc = accelerometer.getYAcc();
+        zAcc =accelerometer.getZAcc();
+        xDist += xAcc * seconds * seconds;
+        yDist += yAcc * seconds * seconds;
+        zDist += zAcc * seconds * seconds;
         Timer.delay(seconds);
     }
     
