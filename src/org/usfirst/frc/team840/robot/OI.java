@@ -34,5 +34,6 @@ public class OI {
 		
 		SmartDashboard.putNumber("X Distance",Robot.xDist);
 		SmartDashboard.putNumber("Y Distance",Robot.yDist);
+		SmartDashboard.putNumber("Z Distance", Robot.zDist);
 	}
 }
