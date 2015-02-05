@@ -24,7 +24,7 @@ public class Drivetrain extends Subsystem {
 		drive = new RobotDrive(driveMotorLeft, driveMotorRight);
 	}
 	
-    public void initDefaultCommand() {
+	public void initDefaultCommand() {
         setDefaultCommand(new ArcadeDrive());
     }
     
