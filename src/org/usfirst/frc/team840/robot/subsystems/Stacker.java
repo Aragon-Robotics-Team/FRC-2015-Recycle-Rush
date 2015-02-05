@@ -22,6 +22,8 @@ public class Stacker extends PIDSubsystem {
         liftMotor = new Talon(RobotMap.liftMotor);
         liftEncoder = new Encoder(RobotMap.liftEncoder0, RobotMap.liftEncoder1);
         sliderCylinders = new DoubleSolenoid(RobotMap.slidingCylinder0,RobotMap.slidingCylinder1);
+        
+        liftEncoder.setDistancePerPulse(840);	//TODO Tune experimentally
     }
     
     public void slideOut() {
