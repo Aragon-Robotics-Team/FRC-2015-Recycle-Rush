@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 /**
  * Controls the stacking cage mechanism. Has PID for the winch/garage door opener and a double solenoid for the rodless cylinders
  */
-@SuppressWarnings("unused")
 public class Stacker extends PIDSubsystem {
 
 	private Talon liftMotor;
@@ -43,14 +42,10 @@ public class Stacker extends PIDSubsystem {
     }
     
     protected double returnPIDInput() {
-        // Return your input value for the PID loop
-        // e.g. a sensor, like a potentiometer:
-        // yourPot.getAverageVoltage() / kYourMaxVoltage;
-    	return 0.0;
+        return liftEncoder.getDistance();
     }
     
     protected void usePIDOutput(double output) {
-        // Use output to drive your system, like a motor
-        // e.g. yourMotor.set(output);
+        liftMotor.set(output);
     }
 }
