@@ -22,17 +22,24 @@ public class Robot extends IterativeRobot {
 	public static Accelerometer accelerometer;
 	public static OI oi;
 	
-	public double xDist = 0.0;
-	public double yDist = 0.0;
-	public double zDist = 0.0;
-	public double xVelocity = 0.0;
-	public double yVelocity = 0.0;
-	public double zVelocity = 0.0;
-	public double xAcc = 0.0;
-	public double yAcc = 0.0;
-	public double zAcc = 0.0;
-	public double accMagnitude = 0.0;
-	public double accAngle = 0.0;
+	public double xDist;
+	public double yDist;
+	public double zDist;
+	public double distanceMagnitude;//
+	public double distanceAngle; //
+	
+	public double xVelocity;
+	public double yVelocity;
+	public double zVelocity;
+	public double velocityMagnitude;//
+	public double velocityAngle;//
+	
+	public double xAcc;
+	public double yAcc;
+	public double zAcc;
+	public double accMagnitude;
+	public double accAngle;
+	
 	public double seconds = 0.005;
 
     Command autonomousCommand;
@@ -44,7 +51,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	drivetraintank = new DrivetrainTank();
     	oi = new OI();
-    	
+    	accelerometer = new Accelerometer(seconds);
 	}
 	
 	public void disabledPeriodic() {
@@ -89,13 +96,18 @@ public class Robot extends IterativeRobot {
         zAcc = accelerometer.getZAcc();
         accMagnitude = accelerometer.getAccMagnitude();
         accAngle = accelerometer.getAngleofAcc();
-        xVelocity += xAcc * seconds;
-        yVelocity += yAcc * seconds;
-        zVelocity += zAcc * seconds;
-        xDist += xVelocity * seconds;
-        yDist += yVelocity * seconds;
-        zDist += zVelocity * seconds;
+        xVelocity = accelerometer.getXVelocity();
+        yVelocity = accelerometer.getYVelocity();
+        zVelocity = accelerometer.getZVelocity();
+        velocityMagnitude = accelerometer.getVelocityMagnitude();
+        velocityAngle = accelerometer.getAngleofVelocity();
+        xDist = accelerometer.getXDistance();
+        yDist = accelerometer.getYDistance();
+        zDist = accelerometer.getZDistance();
+        distanceMagnitude = accelerometer.getDisplacementMagnitude;
+        distanceAngle = accelerometer.getAngleofDisplacement();
         
+        accelerometer.update();
         //do stuff
         
         Timer.delay(seconds);

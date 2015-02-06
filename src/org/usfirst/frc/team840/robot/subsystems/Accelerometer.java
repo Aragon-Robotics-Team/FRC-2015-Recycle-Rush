@@ -12,15 +12,25 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Accelerometer extends Subsystem {
     
 	private BuiltInAccelerometer acc;
+	private double seconds;
+	public double xVel = 0.0;
+	public double yVel = 0.0;
+	public double zVel = 0.0;
+	public double xPos = 0.0;
+	public double yPos = 0.0;
+	public double zPos = 0.0;
 	
-	public Accelerometer() {
+	public Accelerometer(double time) {
 		super();
 		acc = new BuiltInAccelerometer(RobotMap.accRange);
+		seconds = time;
 	}
 	
     public void initDefaultCommand() {
     }
-    
+    public double getSeconds() {
+    	return seconds;
+    }
     public double getXAcc() {
         return acc.getX();
     }
@@ -32,12 +42,53 @@ public class Accelerometer extends Subsystem {
     public double getZAcc() {
         return acc.getZ();
     }
-    //these two methods can be used to get an acceleration vector.
+    public double getXVelocity() {
+    	return xVel;
+    }
+    public double getYVelocity() {
+    	return yVel;
+    }
+    public double getZVelocity() {
+    	return zVel;
+    }
+    public double getXDistance() {
+    	return xPos;
+    }
+    public double getYDistance() {
+    	return yPos;
+    }
+    public double getZDistance() { //lol
+    	return zPos;
+    }
+    public double update() {
+    	xVel += getXAcc() * seconds;
+    	yVel += getYAcc() * seconds;
+    	zVel += getZAcc() * seconds;
+    	xPos += xVel * seconds;
+    	yPos += yVel * seconds;
+    	zPos += zVel * seconds;
+    }
+    
+    //any corresponding magnitude and angle methods can be used to get vectors.
     public double getAccMagnitude() {
-    	double toReturn = acc.getZ() * acc.getZ() * acc.getZ;
-    	toReturn += acc.getY() * acc.getY() * acc.getY();
-    	toReturn += acc.getX() * acc.getX() * acc.getX();
+    	double toReturn = 0.0;
+    	toReturn += getYAcc() * getYAcc() * getYAcc();
+    	toReturn += getXAcc() * getXAcc() * getXAcc();
     	//time to sqrt
+    	toReturn = Math.sqrt(toReturn); //pythagorean theorem
+    	return toReturn;
+    }
+    public double getVelocityMagnitude() {
+    	double toReturn = 0.0;
+    	toReturn += getYVelocity() * getYVelocity();
+    	toReturn += getXVelocity() * getXVelocity();
+    	toReturn = Math.sqrt(toReturn);
+    	return toReturn;
+    }
+    public double getDisplacementMagnitude() {
+    	double toReturn = 0.0;
+    	toReturn += getYDistance() * getYDistance();
+    	toReturn += getXDistance() * getXDistance();
     	toReturn = Math.sqrt(toReturn);
     	return toReturn;
     }
@@ -46,7 +97,18 @@ public class Accelerometer extends Subsystem {
     	//normal to Z
     	double angleToReturn; double slope;
     	slope = getYAcc() / getXAcc(); //units: x/t^2
-    	angleToReturn = Math.arctan(slope);
+        angleToReturn = Math.arctan(slope);
     	return angleToReturn; 
+    }
+    public double getAngleofVelocity() {
+    	double angleToReturn; double slope;
+    	slope = getYVelocity() / getXVelocity();
+    	angleToReturn = Math.arctan(slope);
+    	return angleToReturn;
+    }
+    public double getAngleofDisplacement() { //only works for movement. will make method that works for sitting still as well
+    	double angleToReturn; double slope;
+    	slope = getYDistance() / getXDistance();
+    	angleToReturn = Math.arctan(slope);
     }
 }
