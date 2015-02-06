@@ -20,15 +20,15 @@ public class Accelerometer extends Subsystem {
     public void initDefaultCommand() {
     }
     
-    public double getXAcc() {
+    public static double getXAcc() {
         return acc.getX();
     }
     
-    public double getYAcc() {
+    public static double getYAcc() {
         return acc.getY();
     }
     
-    public double getZAcc() {
+    public static double getZAcc() {
         return acc.getZ();
     }
 }

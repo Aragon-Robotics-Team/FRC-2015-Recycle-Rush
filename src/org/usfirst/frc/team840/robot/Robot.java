@@ -1,9 +1,11 @@
 
 package org.usfirst.frc.team840.robot;
 
+import org.usfirst.frc.team840.robot.subsystems.Accelerometer;
 import org.usfirst.frc.team840.robot.subsystems.DrivetrainTank;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -25,10 +27,10 @@ public class Robot extends IterativeRobot {
 	public double xDist = 0.0;
 	public double yDist = 0.0;
 	public double zDist = 0.0;
-	public double xAcc = 0.0;
-	public double yAcc = 0.0;
-	public double zAcc = 0.0;
-	public double seconds = 0.005;
+	public static double xAcc = 0.0;
+	public static double yAcc = 0.0;
+	public static double zAcc = 0.0;
+	public static double seconds = 0.005;
 
     Command autonomousCommand;
 
@@ -79,9 +81,9 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        xAcc = accelerometer.getXAcc();
-        yAcc = accelerometer.getYAcc();
-        zAcc =accelerometer.getZAcc();
+        xAcc = Accelerometer.getXAcc();
+        yAcc = Accelerometer.getYAcc();
+        zAcc = Accelerometer.getZAcc();
         xDist += xAcc * seconds * seconds;
         yDist += yAcc * seconds * seconds;
         zDist += zAcc * seconds * seconds;
