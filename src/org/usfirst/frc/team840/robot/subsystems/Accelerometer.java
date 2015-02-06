@@ -1,6 +1,7 @@
 package org.usfirst.frc.team840.robot.subsystems;
 
 import org.usfirst.frc.team840.robot.RobotMap;
+import java.lang.Math;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -30,5 +31,22 @@ public class Accelerometer extends Subsystem {
     
     public double getZAcc() {
         return acc.getZ();
+    }
+    //these two methods can be used to get an acceleration vector.
+    public double getAccMagnitude() {
+    	double toReturn = acc.getZ() * acc.getZ() * acc.getZ;
+    	toReturn += acc.getY() * acc.getY() * acc.getY();
+    	toReturn += acc.getX() * acc.getX() * acc.getX();
+    	//time to sqrt
+    	toReturn = Math.sqrt(toReturn);
+    	return toReturn;
+    }
+    public double getAngleofAcc() {
+    	//will find "forward" position later. for now forward is the Y value
+    	//normal to Z
+    	double angleToReturn; double slope;
+    	slope = getYAcc() / getXAcc(); //units: x/t^2
+    	angleToReturn = Math.arctan(slope);
+    	return angleToReturn; 
     }
 }

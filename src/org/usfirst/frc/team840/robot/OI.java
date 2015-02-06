@@ -35,8 +35,13 @@ public class OI {
 		SmartDashboard.putNumber("X Acceleration",Robot.xAcc);
 		SmartDashboard.putNumber("Y Acceleration",Robot.yAcc);
 		SmartDashboard.putNumber("Z Acceleration", Robot.zAcc);
+		SmartDashboard.putNumber("X Velocity",Robot.xVelocity);
+		SmartDashboard.putNumber("Y Velocity",Robot.yVelocity);
+		SmartDashboard.putNumber("Z Velocity", Robot.zVelocity);		
 		SmartDashboard.putNumber("X Distance",Robot.xDist);
 		SmartDashboard.putNumber("Y Distance",Robot.yDist);
 		SmartDashboard.putNumber("Z Distance", Robot.zDist);
+		SmartDashboard.putNumber("Magnitude of acceleration", Robot.accMagnitude);
+		SmartDashboard.putNumber("Angle of acceleration", Robot.accAngle);
 	}
 }

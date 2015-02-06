@@ -25,9 +25,14 @@ public class Robot extends IterativeRobot {
 	public double xDist = 0.0;
 	public double yDist = 0.0;
 	public double zDist = 0.0;
+	public double xVelocity = 0.0;
+	public double yVelocity = 0.0;
+	public double zVelocity = 0.0;
 	public double xAcc = 0.0;
 	public double yAcc = 0.0;
 	public double zAcc = 0.0;
+	public double accMagnitude = 0.0;
+	public double accAngle = 0.0;
 	public double seconds = 0.005;
 
     Command autonomousCommand;
@@ -81,10 +86,18 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
         xAcc = accelerometer.getXAcc();
         yAcc = accelerometer.getYAcc();
-        zAcc =accelerometer.getZAcc();
-        xDist += xAcc * seconds * seconds;
-        yDist += yAcc * seconds * seconds;
-        zDist += zAcc * seconds * seconds;
+        zAcc = accelerometer.getZAcc();
+        accMagnitude = accelerometer.getAccMagnitude();
+        accAngle = accelerometer.getAngleofAcc();
+        xVelocity += xAcc * seconds;
+        yVelocity += yAcc * seconds;
+        zVelocity += zAcc * seconds;
+        xDist += xVelocity * seconds;
+        yDist += yVelocity * seconds;
+        zDist += zVelocity * seconds;
+        
+        //do stuff
+        
         Timer.delay(seconds);
     }
     
