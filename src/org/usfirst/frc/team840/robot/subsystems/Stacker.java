@@ -1,6 +1,7 @@
 package org.usfirst.frc.team840.robot.subsystems;
 
 import org.usfirst.frc.team840.robot.RobotMap;
+import org.usfirst.frc.team840.robot.commands.HoldLift;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
@@ -39,8 +40,7 @@ public class Stacker extends PIDSubsystem {
     }
     
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new HoldLift());
     }
     
     protected double returnPIDInput() {
