@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class SlideIn extends Command {
 	
-    public slideIn() {
+    public SlideIn() {
         requires(Robot.stacker);
         
     }
