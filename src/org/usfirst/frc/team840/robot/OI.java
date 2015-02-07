@@ -30,9 +30,9 @@ public class OI {
 		leftStick.toggleWhenActive(new ArcadeDriveCreep());
 		rightStick.toggleWhenActive(new ArcadeDriveCreep());
 		
-		x.whenPressed(new SlideIn());
-		b.whenPressed(new SlideOut());
-		y.whenPressed(new SetLiftEncoder(24));
-		a.whenPressed(new SetLiftEncoder(0));	
+		a.whenPressed(new SetLiftBottomEncoder());
+		b.whenPressed(new SetLiftLoadToteEncoder());
+		x.whenPressed(new SlideOut());
+		y.whenPressed(new SlideIn());	
 	}
 }
