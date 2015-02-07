@@ -5,7 +5,7 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ *	Reed switches are placed along the stacker's slide, and along with the magnet on the lift, we are able to detect the position of the lift at these key locations. This command sets the lift to a given reed switch position. It is best not to call this command directly, but rather to use one of the presets in the form of command groups. 
  */
 public class SetLiftMagnets extends Command {
 

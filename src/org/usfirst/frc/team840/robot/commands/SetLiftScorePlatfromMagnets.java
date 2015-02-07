@@ -5,7 +5,7 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
- *
+ *	Sets the lift to the height needed to score on the platforms using the reed switches.
  */
 public class SetLiftScorePlatfromMagnets extends CommandGroup {
     

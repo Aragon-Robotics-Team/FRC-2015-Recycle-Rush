@@ -5,7 +5,7 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ *	Pushes the rodless cylinders out.
  */
 public class SlideOut extends Command {
 	

@@ -5,7 +5,7 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ *	The pulley that raises the lift is connected to a mechanical encoder. This command uses PID to set the lift to any position. It is best not to call this directly, but rather to use one of the presets provided in the form of command groups.
  */
 public class SetLiftEncoder extends Command {
 

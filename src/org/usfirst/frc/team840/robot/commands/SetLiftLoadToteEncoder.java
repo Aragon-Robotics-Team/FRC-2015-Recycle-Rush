@@ -5,7 +5,7 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
- *
+ *	Sets the lift to the height needed to load totes from the ground using PID.
  */
 public class SetLiftLoadToteEncoder extends CommandGroup {
     

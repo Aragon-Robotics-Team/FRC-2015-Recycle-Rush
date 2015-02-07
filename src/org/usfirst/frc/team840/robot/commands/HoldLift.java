@@ -5,7 +5,7 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ *	This command uses PID to hold the lift where it is, using the motor to counteract any outside forces affecting the system.
  */
 public class HoldLift extends Command {
 

@@ -5,7 +5,7 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ *	Pulls the rodless cylinders in.
  */
 public class SlideIn extends Command {
 	
