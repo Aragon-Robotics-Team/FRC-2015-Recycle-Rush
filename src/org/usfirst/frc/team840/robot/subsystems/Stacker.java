@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
 /**
- * Controls the stacking cage mechanism. Has PID for the winch/garage door opener and a double solenoid for the rodless cylinders
+ * Controls the stacking cage mechanism. Has a Talon/mechanical encoder PID for the winch/garage door opener, a double solenoid for the rodless cylinders, and reed switches for manual position sensing. All lengths are in inches
  */
 public class Stacker extends PIDSubsystem {
 
@@ -19,9 +19,11 @@ public class Stacker extends PIDSubsystem {
 	private DigitalInput bottomReed, loadToteReed, loadBinReed, scorePlatformReed, scoreCoOpReed;
 	private DoubleSolenoid sliderCylinders;
 	
-	private int liftPosition;	//0 - 5; Bottom, score platform, score co-op, load tote, load bin 
+	private int liftPosition;	//0 - 4; Bottom, score platform, score co-op, load tote, load bin 
 	
-	public double liftMotorManualPower = 0.5;
+	public final double liftMotorManualPower = 0.5;
+	public final double bottomHeight = 0;
+	public final double loadToteHeight = 13;
 	
     // Initialize your subsystem here
     public Stacker() {
