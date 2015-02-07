@@ -35,7 +35,7 @@ public class OI {
 		
 		x.whenPressed(new SlideIn());
 		b.whenPressed(new SlideOut());
-		y.whenPressed(new SetLift(9001));
+		y.whenPressed(new SetLift(24));
 		a.whenPressed(new SetLift(0));
 		
 		leftBumper.whileHeld(new SetLift(Robot.stacker.getPosition() - 1));

@@ -24,7 +24,10 @@ public class Stacker extends PIDSubsystem {
         liftEncoder = new Encoder(RobotMap.liftEncoder[0], RobotMap.liftEncoder[0]);
         sliderCylinders = new DoubleSolenoid(RobotMap.slidingCylinder[0],RobotMap.slidingCylinder[0]);
         
-        liftEncoder.setDistancePerPulse(840);	//TODO Tune experimentally
+        getPIDController().setContinuous(false);
+        getPIDController().setAbsoluteTolerance(0.05);
+        getPIDController().setInputRange(0, 250);	//In encoder ticks. 250 is 50 in.
+        liftEncoder.setDistancePerPulse(0.2);	//All units in in.
     }
     
     public void slideOut() {
