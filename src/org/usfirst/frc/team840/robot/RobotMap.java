@@ -10,12 +10,12 @@ public class RobotMap {
     
     //Ports on the roboRio, and directional multiplier
 	public static final int[] driveMotorLeft = {0,1};
-	public static final int[] driveMotorRight = {0,-1};
-	public static final int[] liftMotor = {0,1};
+	public static final int[] driveMotorRight = {1,-1};
+	public static final int[] liftMotor = {3,1};
 	
 	public static final int[] slidingCylinder = {0,1};
 	
-	public static final int[] liftEncoder = {0,1};
+	public static final int[] liftEncoder = {4,5};
 	
 	public static final int[] bottomReed = {0};	//TODO Replace dummy values
 	public static final int[] loadToteReed = {0};
