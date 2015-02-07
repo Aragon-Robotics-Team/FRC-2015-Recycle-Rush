@@ -57,6 +57,7 @@ public class SetLiftMagnets extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.stacker.setLiftMotor(0);
     	Robot.stacker.setLiftPosition(setpoint);
     }
 
