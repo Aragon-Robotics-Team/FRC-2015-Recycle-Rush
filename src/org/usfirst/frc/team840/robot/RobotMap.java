@@ -13,7 +13,8 @@ public class RobotMap {
 	public static final int[] driveMotorRight = {1,-1};
 	public static final int[] liftMotor = {3,1};
 	
-	public static final int[] slidingCylinder = {0,1};
+	public static final int[] rodlessCylinderLeft = {0,1};
+	public static final int[] rodlessCylinderRight = {2, 3};
 	
 	public static final int[] liftEncoder = {4,5};
 	

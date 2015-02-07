@@ -16,7 +16,8 @@ public class SlideIn extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.stacker.slideIn();
+    	Robot.stacker.slideInLeft();
+    	Robot.stacker.slideInRight();
     }
 
     // Called repeatedly when this Command is scheduled to run

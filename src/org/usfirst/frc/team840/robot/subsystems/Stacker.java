@@ -17,7 +17,7 @@ public class Stacker extends PIDSubsystem {
 	private Talon liftMotor;
 	private Encoder liftEncoder;
 	private DigitalInput bottomReed, loadToteReed, loadBinReed, scorePlatformReed, scoreCoOpReed;
-	private DoubleSolenoid sliderCylinders;
+	private DoubleSolenoid rodlessCylinderLeft, rodlessCylinderRight;
 	
 	private int liftPosition;	//0 - 4; Bottom, score platform, score co-op, load tote, load bin 
 	
@@ -30,7 +30,8 @@ public class Stacker extends PIDSubsystem {
         super("Stacker", 2.0, 0.0, 0.0);	//TODO Tune PID constants
         liftMotor = new Talon(RobotMap.liftMotor[0]);
         liftEncoder = new Encoder(RobotMap.liftEncoder[0], RobotMap.liftEncoder[0]);
-        sliderCylinders = new DoubleSolenoid(RobotMap.slidingCylinder[0],RobotMap.slidingCylinder[0]);
+        rodlessCylinderLeft = new DoubleSolenoid(RobotMap.rodlessCylinderLeft[0], RobotMap.rodlessCylinderLeft[1]);
+        rodlessCylinderRight = new DoubleSolenoid(RobotMap.rodlessCylinderRight[0], RobotMap.rodlessCylinderRight[1]);
         bottomReed = new DigitalInput(RobotMap.bottomReed[0]);
         loadToteReed = new DigitalInput(RobotMap.loadToteReed[0]);
         loadBinReed = new DigitalInput(RobotMap.loadBinReed[0]);
@@ -49,12 +50,20 @@ public class Stacker extends PIDSubsystem {
     	liftMotor.set(power);
     }
     
-    public void slideOut() {
-    	sliderCylinders.set(DoubleSolenoid.Value.kForward);
+    public void slideOutLeft() {
+    	rodlessCylinderLeft.set(DoubleSolenoid.Value.kForward);
     }
     
-    public void slideIn() {
-    	sliderCylinders.set(DoubleSolenoid.Value.kReverse);
+    public void slideOutRight() {
+    	rodlessCylinderRight.set(DoubleSolenoid.Value.kForward);
+    }
+    
+    public void slideInLeft() {
+    	rodlessCylinderLeft.set(DoubleSolenoid.Value.kReverse);
+    }
+    
+    public void slideInRight() {
+    	rodlessCylinderRight.set(DoubleSolenoid.Value.kReverse);
     }
     
     public boolean getBottomReed() {
@@ -75,10 +84,6 @@ public class Stacker extends PIDSubsystem {
     
     public boolean getScoreCoOpReed() {
     	return scoreCoOpReed.get();
-    }
-    
-    public DoubleSolenoid.Value getValue() {
-    	return sliderCylinders.get();
     }
     
     public void initDefaultCommand() {
