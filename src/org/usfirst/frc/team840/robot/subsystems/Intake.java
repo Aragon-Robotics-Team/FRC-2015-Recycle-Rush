@@ -2,7 +2,7 @@ package org.usfirst.frc.team840.robot.subsystems;
 
 import org.usfirst.frc.team840.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -10,12 +10,12 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Intake extends Subsystem {
     
-    private Talon intakeMotorLeft, intakeMotorRight;
+    private Victor intakeMotorLeft, intakeMotorRight;
     
     public Intake() {
     	super();
-    	intakeMotorLeft = new Talon(RobotMap.intakeMotorLeft[0]);
-    	intakeMotorRight = new Talon(RobotMap.intakeMotorRight[0]);
+    	intakeMotorLeft = new Victor(RobotMap.intakeMotorLeft[0]);
+    	intakeMotorRight = new Victor(RobotMap.intakeMotorRight[0]);
     }
     
     public void setLeft(double power) {	//Positive for rolling in
