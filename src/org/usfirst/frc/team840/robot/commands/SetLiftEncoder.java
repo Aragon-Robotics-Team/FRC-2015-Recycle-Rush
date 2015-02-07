@@ -7,12 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class SetLift extends Command {
+public class SetLiftEncoder extends Command {
 
 	private double setpoint;
 	private final double threshold = 0.5;	//TODO Tune experimentally (Units irrelevant, but make sure to match to the units in DistancePerPulse)
 	
-    public SetLift(double setpoint) {
+    public SetLiftEncoder(double setpoint) {
         requires(Robot.stacker);
         this.setpoint = setpoint;
     }

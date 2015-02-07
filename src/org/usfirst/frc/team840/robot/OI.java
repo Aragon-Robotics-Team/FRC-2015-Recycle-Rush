@@ -35,10 +35,10 @@ public class OI {
 		
 		x.whenPressed(new SlideIn());
 		b.whenPressed(new SlideOut());
-		y.whenPressed(new SetLift(24));
-		a.whenPressed(new SetLift(0));
+		y.whenPressed(new SetLiftEncoder(24));
+		a.whenPressed(new SetLiftEncoder(0));
 		
-		leftBumper.whileHeld(new SetLift(Robot.stacker.getPosition() - 1));
-		rightBumper.whileHeld(new SetLift(Robot.stacker.getPosition() + 1));
+		leftBumper.whileHeld(new SetLiftEncoder(Robot.stacker.getPosition() - 1));
+		rightBumper.whileHeld(new SetLiftEncoder(Robot.stacker.getPosition() + 1));
 	}
 }
