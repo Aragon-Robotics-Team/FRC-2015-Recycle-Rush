@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ *	These two rollers move totes and bins into the robot's stacking subsystem.
  */
 public class Intake extends Subsystem {
     
