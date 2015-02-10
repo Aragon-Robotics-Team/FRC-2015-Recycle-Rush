@@ -2,6 +2,7 @@
 package org.usfirst.frc.team840.robot;
 
 import org.usfirst.frc.team840.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team840.robot.subsystems.Intake;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -19,6 +20,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static Drivetrain drivetrain;
+	public static Intake intake;
 	
 	public static OI oi;
 	
@@ -33,6 +35,7 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putNumber("Lerp factor: ", 0.125);
     	
     	drivetrain = new Drivetrain();
+    	intake = new Intake();
     	oi = new OI();
 	}
 	
