@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
  * Controls the stacking cage mechanism. Has a Talon/mechanical encoder PID for the winch/garage door opener, a double solenoid for the rodless cylinders, and reed switches for manual position sensing. All lengths are in inches
@@ -31,8 +30,8 @@ public class Stacker extends PIDSubsystem {
         super("Stacker", 0.0325, 0.0, 0.0);	//TODO Tune PID constants
         liftMotor = new Talon(RobotMap.liftMotor[0]);
         liftEncoder = new Encoder(RobotMap.liftEncoder[0], RobotMap.liftEncoder[1]);
-        rodlessCylinderLeft = new DoubleSolenoid(RobotMap.rodlessCylinderLeft[0], RobotMap.rodlessCylinderLeft[1]);
-        rodlessCylinderRight = new DoubleSolenoid(RobotMap.rodlessCylinderRight[0], RobotMap.rodlessCylinderRight[1]);
+        rodlessCylinderLeft = new DoubleSolenoid(1, RobotMap.rodlessCylinderLeft[0], RobotMap.rodlessCylinderLeft[1]);	//TODO Put CAN ID in robot map, but only after merge
+        rodlessCylinderRight = new DoubleSolenoid(1, RobotMap.rodlessCylinderRight[0], RobotMap.rodlessCylinderRight[1]);
         bottomReed = new DigitalInput(RobotMap.bottomReed[0]);
         loadToteReed = new DigitalInput(RobotMap.loadToteReed[0]);
         loadBinReed = new DigitalInput(RobotMap.loadBinReed[0]);
