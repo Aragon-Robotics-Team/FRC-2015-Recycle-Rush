@@ -39,9 +39,13 @@ public class Stacker extends PIDSubsystem {
         scoreCoOpReed = new DigitalInput(RobotMap.scoreCoOpReed[0]);
         
         liftEncoder.setDistancePerPulse(0.2);	//All units in in.
+        liftEncoder.reset();
+        
         getPIDController().setContinuous(false);
         getPIDController().setAbsoluteTolerance(0.05);
         getPIDController().setInputRange(0, 250);	//In encoder ticks. 250 is 50 in.
+        setSetpoint(bottomHeight);
+        enable();
         
         liftPosition = 0;
     }
