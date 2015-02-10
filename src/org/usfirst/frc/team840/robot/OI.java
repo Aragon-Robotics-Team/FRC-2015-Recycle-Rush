@@ -1,8 +1,6 @@
 package org.usfirst.frc.team840.robot;
 
-import org.usfirst.frc.team840.robot.commands.ArcadeDriveCreep;
-import org.usfirst.frc.team840.robot.commands.RollIn;
-import org.usfirst.frc.team840.robot.commands.RollOut;
+import org.usfirst.frc.team840.robot.commands.*;
 
 import edu.art.frc.lib.util.Gamepad;
 import edu.art.frc.lib.util.GamepadButton;
@@ -25,11 +23,13 @@ public class OI {
 		GamepadButton rightStick = new GamepadButton(gamepad, "RIGHT_JOYSTICK");
 		GamepadButton a2 = new GamepadButton(gamepad2, "A");
 		GamepadButton b2 = new GamepadButton(gamepad2, "B");
+		GamepadButton rightTrigger2 = new GamepadButton(gamepad2, "RIGHT_TRIGGER");
 		
 		leftStick.toggleWhenActive(new ArcadeDriveCreep());
 		rightStick.toggleWhenActive(new ArcadeDriveCreep());
 		
 		a2.whileHeld(new RollIn());
 		b2.whileHeld(new RollOut());
+		rightTrigger2.whileHeld(new IntakeMotorsManual(gamepad2.getLeftY(), gamepad2.getRightY()));
 	}
 }
