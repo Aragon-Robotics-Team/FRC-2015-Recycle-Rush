@@ -19,7 +19,7 @@ public class SetLiftEncoder extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.stacker.setSetpoint(setpoint);
+    	Robot.stacker.setSetpoint(-1 * setpoint);	//Motor is connected backwards
     }
 
     // Called repeatedly when this Command is scheduled to run
