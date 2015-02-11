@@ -39,7 +39,7 @@ public class Stacker extends PIDSubsystem {
         scoreCoOpReed = new DigitalInput(RobotMap.scoreCoOpReed[0]);
         
         liftEncoder.setReverseDirection(false);
-        liftEncoder.setDistancePerPulse((2 * Math.PI) / 4);	//Circumference over ticks per rotation. All units in in.
+        liftEncoder.setDistancePerPulse((2 * Math.PI) / 497);	//Circumference over ticks per rotation. All units in in.
         liftEncoder.reset();
         
         getPIDController().setContinuous(false);
