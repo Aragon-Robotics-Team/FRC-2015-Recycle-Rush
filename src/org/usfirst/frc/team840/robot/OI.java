@@ -24,10 +24,20 @@ public class OI {
 		GamepadButton a2 = new GamepadButton(gamepad2, "A");
 		GamepadButton b2 = new GamepadButton(gamepad2, "B");
 		
+		GamepadButton x = new GamepadButton(gamepad, "X");
+		GamepadButton b = new GamepadButton(gamepad, "B");
+		GamepadButton y = new GamepadButton(gamepad, "Y");
+		GamepadButton a = new GamepadButton(gamepad, "A");
+				
 		leftStick.toggleWhenActive(new ArcadeDriveCreep());
 		rightStick.toggleWhenActive(new ArcadeDriveCreep());
-		
+
 		a2.whileHeld(new RollIn());
 		b2.whileHeld(new RollOut());
+
+		a.whenPressed(new SetLiftBottomEncoder());
+		b.whenPressed(new SetLiftLoadToteEncoder());
+		x.whenPressed(new SlideOut());
+		y.whenPressed(new SlideIn());	
 	}
 }

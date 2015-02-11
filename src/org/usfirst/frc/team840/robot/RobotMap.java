@@ -10,10 +10,22 @@ package org.usfirst.frc.team840.robot;
  */
 public class RobotMap {
     
+
     public static final int[] driveMotorLeft = {0, 1};
     public static final int[] driveMotorRight = {1, -1};
     public static final int[] intakeMotorLeft = {4, 1};
     public static final int[] intakeMotorRight = {5, -1};
-    
+	public static final int[] liftMotor = {3,1};
+	
+	public static final int[] rodlessCylinderLeft = {0,1};
+	public static final int[] rodlessCylinderRight = {2, 3};
+	
+	public static final int[] liftEncoder = {4,5};
+	
+	public static final int[] bottomReed = {6};	//TODO Replace dummy values
+	public static final int[] loadToteReed = {7};
+	public static final int[] loadBinReed = {8};
+	public static final int[] scorePlatformReed = {9};
+	public static final int[] scoreCoOpReed = {0};
     
 }
