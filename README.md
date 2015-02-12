@@ -5,15 +5,25 @@ Members
 =====================
 
 Miles P. Olson 
+
 Ken Preiser 
+
 Jason Zhao 
+
 Shirin Amini 
+
 Chris Xiong 
+
 Omar Hussain 
+
 Ethan Levitt 
+
 Lily Zhou 
+
 Karena Zhang 
+
 Sahith Bhamidipati
+
 
 
 Driver Controls:
