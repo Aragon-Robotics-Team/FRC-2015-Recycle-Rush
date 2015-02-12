@@ -38,7 +38,7 @@ RB: Set pneumatics to in position
 start: Calibrate lift
 
 
-DevMode (Driver):
+Developer Mode (on driver controller):
 =====================
 A: Set lift to bottom level
 
