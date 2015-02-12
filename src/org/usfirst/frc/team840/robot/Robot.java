@@ -1,12 +1,13 @@
 
 package org.usfirst.frc.team840.robot;
 
-import org.usfirst.frc.team840.robot.subsystems.DrivetrainTank;
-
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
+import org.usfirst.frc.team840.robot.subsystems.*;
+
 
 
 /**
@@ -18,29 +19,27 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 
-	public static DrivetrainTank drivetraintank;
-	public static Accelerometer accelerometer;
 	public static OI oi;
+	public static Accelerometer1 accelerometer;
 	
-	public double xDist;
-	public double yDist;
-	public double zDist;
-	public double distanceMagnitude;//
-	public double distanceAngle; //
+	public static double xDist;
+	public static double yDist;
+	public static double zDist;
+	public static double distanceMagnitude;//
+	public static double distanceAngle; //
 	
-	public double xVelocity;
-	public double yVelocity;
-	public double zVelocity;
-	public double velocityMagnitude;//
-	public double velocityAngle;//
+	public static double xVelocity;
+	public static double yVelocity;
+	public static double zVelocity;
+	public static double velocityMagnitude;//
+	public static double velocityAngle;//
 	
-	public double xAcc;
-	public double yAcc;
-	public double zAcc;
-	public double accMagnitude;
-	public double accAngle;
+	public static double xAcc;
+	public static double yAcc;
+	public static double zAcc;
+	public static double accMagnitude;
+	public static double accAngle;
 	
-	public double seconds = 0.005;
 
     Command autonomousCommand;
 
@@ -49,9 +48,8 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-    	drivetraintank = new DrivetrainTank();
     	oi = new OI();
-    	accelerometer = new Accelerometer(seconds);
+    	accelerometer = new Accelerometer1();
 	}
 	
 	public void disabledPeriodic() {
@@ -91,26 +89,9 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        xAcc = accelerometer.getXAcc();
-        yAcc = accelerometer.getYAcc();
-        zAcc = accelerometer.getZAcc();
-        accMagnitude = accelerometer.getAccMagnitude();
-        accAngle = accelerometer.getAngleofAcc();
-        xVelocity = accelerometer.getXVelocity();
-        yVelocity = accelerometer.getYVelocity();
-        zVelocity = accelerometer.getZVelocity();
-        velocityMagnitude = accelerometer.getVelocityMagnitude();
-        velocityAngle = accelerometer.getAngleofVelocity();
-        xDist = accelerometer.getXDistance();
-        yDist = accelerometer.getYDistance();
-        zDist = accelerometer.getZDistance();
-        distanceMagnitude = accelerometer.getDisplacementMagnitude;
-        distanceAngle = accelerometer.getAngleofDisplacement();
         
-        accelerometer.update();
         //do stuff
         
-        Timer.delay(seconds);
     }
     
     /**

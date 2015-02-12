@@ -1,11 +1,9 @@
 package org.usfirst.frc.team840.robot;
 
-import org.usfirst.frc.team840.robot.commands.TankDriveCreep;
-import org.usfirst.frc.team840.robot.subsystems.Accelerometer;
 
-import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 
 
 /**
@@ -26,23 +24,7 @@ public class OI {
 	}
 	
 	public OI() {
-		JoystickButton triggerRight = new JoystickButton(joyRight, 1);
-		JoystickButton triggerLeft = new JoystickButton(joyLeft, 1);
 		
-		triggerLeft.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
-		triggerRight.whileHeld(new TankDriveCreep(RobotMap.CREEP_SPEED));
-		
-		SmartDashboard.putNumber("X Acceleration",Robot.xAcc);
-		SmartDashboard.putNumber("Y Acceleration",Robot.yAcc);
-		SmartDashboard.putNumber("Z Acceleration", Robot.zAcc);
-		SmartDashboard.putNumber("X Velocity",Robot.xVelocity);
-		SmartDashboard.putNumber("Y Velocity",Robot.yVelocity);
-		SmartDashboard.putNumber("Z Velocity", Robot.zVelocity);		
-		SmartDashboard.putNumber("X Distance",Robot.xDist);
-		SmartDashboard.putNumber("Y Distance",Robot.yDist);
-		SmartDashboard.putNumber("Z Distance", Robot.zDist); 
-		SmartDashboard.putNumber("Magnitude of acceleration", Robot.accMagnitude);
-		SmartDashboard.putNumber("Angle of acceleration", Robot.accAngle);
 		//other prints are probably unimportant
 	}
 }
