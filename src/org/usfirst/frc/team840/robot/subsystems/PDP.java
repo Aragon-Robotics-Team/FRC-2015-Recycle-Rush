@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc.team840.robot.commands.*;
 
 /**
- *
+ * The PowerDistributionPanel is used to get the current for every motor in the robot.
  */
 
 public class PDP extends Subsystem {

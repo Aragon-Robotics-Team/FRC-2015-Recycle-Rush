@@ -12,8 +12,10 @@ import edu.art.frc.lib.util.GamepadButton;
 @SuppressWarnings("unused")
 public class OI {
 	
+	//Allows player to control with single gamepad
 	private boolean devMode = false;
 	
+	//Initialize gamepad 
 	private Gamepad driverPad = new Gamepad(0);
 	private Gamepad operatorPad = new Gamepad(1);
 	
@@ -21,6 +23,7 @@ public class OI {
 		return driverPad;
 	}
 	
+	//Set all the buttons and their tasks
 	public OI() {
 		GamepadButton leftStick = new GamepadButton(driverPad, "LEFT_JOYSTICK");
 		GamepadButton rightStick = new GamepadButton(driverPad, "RIGHT_JOYSTICK");
@@ -37,6 +40,7 @@ public class OI {
 		GamepadButton leftBumper2 = new GamepadButton(operatorPad, "LEFT_BUMPER");
 		GamepadButton rightBumper2 = new GamepadButton(operatorPad, "RIGHT_BUMPER");
 		GamepadButton start2 = new GamepadButton(operatorPad, "START");
+		
 		
 		if(devMode) {
 			leftStick.toggleWhenActive(new ArcadeDriveCreep());
