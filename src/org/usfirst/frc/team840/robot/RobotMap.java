@@ -27,5 +27,4 @@ public class RobotMap {
 	public static final int[] loadBinReed = {8};
 	public static final int[] scorePlatformReed = {9};
 	public static final int[] scoreCoOpReed = {0};
-    
 }

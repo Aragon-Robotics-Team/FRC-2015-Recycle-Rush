@@ -1,9 +1,7 @@
 
 package org.usfirst.frc.team840.robot;
 
-import org.usfirst.frc.team840.robot.subsystems.Drivetrain;
-import org.usfirst.frc.team840.robot.subsystems.Intake;
-import org.usfirst.frc.team840.robot.subsystems.Stacker;
+import org.usfirst.frc.team840.robot.subsystems.*;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -23,6 +21,7 @@ public class Robot extends IterativeRobot {
 	public static Drivetrain drivetrain;
 	public static Intake intake;
 	public static Stacker stacker;
+	public static PDP pdp;
 	
 	public static OI oi;
 	
