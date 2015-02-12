@@ -25,7 +25,7 @@ public class OI {
 	
 	//Set all the buttons and their tasks
 	public OI() {
-		GamepadButton leftStick = new GamepadButton(driverPad, "LEFT_JOYSTICK");
+		GamepadButton leftStick = new GamepadButton(driverPad, "LEFT_JOYSTICK"); //For driver controller
 		GamepadButton rightStick = new GamepadButton(driverPad, "RIGHT_JOYSTICK");
 		GamepadButton x = new GamepadButton(driverPad, "X");
 		GamepadButton b = new GamepadButton(driverPad, "B");
@@ -35,7 +35,7 @@ public class OI {
 		GamepadButton rightBumper = new GamepadButton(driverPad, "RIGHT_BUMPER");
 		GamepadButton start = new GamepadButton(driverPad, "START");
 		
-		GamepadButton a2 = new GamepadButton(operatorPad, "A");
+		GamepadButton a2 = new GamepadButton(operatorPad, "A"); //For operator controller
 		GamepadButton b2 = new GamepadButton(operatorPad, "B");
 		GamepadButton leftBumper2 = new GamepadButton(operatorPad, "LEFT_BUMPER");
 		GamepadButton rightBumper2 = new GamepadButton(operatorPad, "RIGHT_BUMPER");
@@ -43,7 +43,7 @@ public class OI {
 		
 		
 		if(devMode) {
-			leftStick.toggleWhenActive(new ArcadeDriveCreep());
+			leftStick.toggleWhenActive(new ArcadeDriveCreep()); //Developer mode
 			rightStick.toggleWhenActive(new ArcadeDriveCreep());
 			
 			a.whenPressed(new SetLiftBottomEncoder());
@@ -56,13 +56,13 @@ public class OI {
 			
 			//start.whenPressed(new Calibration());
 		} else {
-			leftStick.toggleWhenActive(new ArcadeDriveCreep());
+			leftStick.toggleWhenActive(new ArcadeDriveCreep()); //Driver controller
 			rightStick.toggleWhenActive(new ArcadeDriveCreep());
 			
 			leftBumper.whileHeld(new RollOut());
 			rightBumper.whileHeld(new RollIn());
 		
-			a2.whenPressed(new SetLiftBottomEncoder());
+			a2.whenPressed(new SetLiftBottomEncoder()); //Operator controller
 			b2.whenPressed(new SetLiftLoadToteEncoder());
 			leftBumper2.whenPressed(new SlideIn());
 			rightBumper2.whenPressed(new SlideOut());
