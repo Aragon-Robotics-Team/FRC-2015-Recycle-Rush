@@ -27,8 +27,6 @@ public class OI {
 		GamepadButton b = new GamepadButton(driverPad, "B");
 		GamepadButton y = new GamepadButton(driverPad, "Y");
 		GamepadButton a = new GamepadButton(driverPad, "A");
-		GamepadButton leftTrigger = new GamepadButton(driverPad, "LEFT_TRIGGER");
-		GamepadButton rightTrigger = new GamepadButton(driverPad, "RIGHT_TRIGGER");
 		GamepadButton leftBumper = new gamepadButton(driverPad, "LEFT_BUMPER");
 		GamepadButton rightBumper = new gamepadButton(driverPad, "RIGHT_BUMPER");
 		GamepadButton start = new gamepadButton(driverPad, "START");
