@@ -5,7 +5,7 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *This command spins the rollers to move items in.
+ * This command spins the rollers to move items in.
  */
 public class RollIn extends Command {
 

@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
- *This command uses the PowerDistributionPanel to display the amps that each motor currently uses.
+ * This command uses the PowerDistributionPanel to display the amps that each motor currently uses.
  */
 public class DisplayCurrents extends Command {
     

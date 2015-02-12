@@ -5,7 +5,7 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *This command stops the rollers
+ * This command stops the rollers.
  */
 public class RollStop extends Command {
 
