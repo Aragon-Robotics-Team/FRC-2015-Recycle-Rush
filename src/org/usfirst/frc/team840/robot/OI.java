@@ -29,9 +29,14 @@ public class OI {
 		GamepadButton a = new GamepadButton(gamepad, "A");
 		GamepadButton leftTrigger = new GamepadButton(gamepad, "LEFT_TRIGGER");
 		GamepadButton rightTrigger = new GamepadButton(gamepad, "RIGHT_TRIGGER");
+		GamepadButton leftBumper = new gamepadButton(gamepad, "LEFT_BUMPER");
+		GamepadButton rightBumper = new gamepadButton(gamepad, "RIGHT_BUMPER");
 		
 		GamepadButton a2 = new GamepadButton(gamepad2, "A");
 		GamepadButton b2 = new GamepadButton(gamepad2, "B");
+		GamepadButton leftBumper2 = new gamepadButton(gamepad, "LEFT_BUMPER");
+		GamepadButton rightBumper2 = new gamepadButton(gamepad, "RIGHT_BUMPER");
+		GamepadButton start2 = new gamepadButton(gamepad, "START");
 		
 		if(devMode) {
 			leftStick.toggleWhenActive(new ArcadeDriveCreep());
@@ -39,23 +44,24 @@ public class OI {
 			
 			a.whenPressed(new SetLiftBottomEncoder());
 			b.whenPressed(new SetLiftLoadToteEncoder());
-			x.whenPressed(new SlideOut());
-			y.whenPressed(new SlideIn());
+			x.whenPressed(new SlideIn());
+			y.whenPressed(new SlideOut());
 			
-			leftTrigger.whenPressed(new RollOut());
-			rightTrigger.whenPressed(new RollIn());
+			leftBumper.whenPressed(new RollOut());
+			rightBumper.whenPressed(new RollIn());
 		}	
 		else {
 			leftStick.toggleWhenActive(new ArcadeDriveCreep());
 			rightStick.toggleWhenActive(new ArcadeDriveCreep());
-		
-			a.whenPressed(new SetLiftBottomEncoder());
-			b.whenPressed(new SetLiftLoadToteEncoder());
-			x.whenPressed(new SlideOut());
-			y.whenPressed(new SlideIn());
 			
-			a2.whileHeld(new RollIn());
-			b2.whileHeld(new RollOut());
+			a.whileHeld(new RollIn());
+			b.whileHeld(new RollOut());
+		
+			a2.whenPressed(new SetLiftBottomEncoder());
+			b2.whenPressed(new SetLiftLoadToteEncoder());
+			leftBumper2.whenPressed(new SlideIn());
+			rightBumper2.whenPressed(new SlideOut());
+			start.whenPressed(new Calibration());
 		}
 	}
 }
