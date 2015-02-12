@@ -12,7 +12,7 @@ import org.usfirst.frc.team840.robot.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
- * functions corresponding to each mode, as described in the IterativeRobot
+ * functions corresponding to each mode, a described in the IterativeRobot
  * documentation. If you change the name of this class or the package after
  * creating this project, you must also update the manifest file in the resource
  * directory.
@@ -21,24 +21,7 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 	public static Accelerometer1 accelerometer;
-	
-	public static double xDist;
-	public static double yDist;
-	public static double zDist;
-	public static double distanceMagnitude;//
-	public static double distanceAngle; //
-	
-	public static double xVelocity;
-	public static double yVelocity;
-	public static double zVelocity;
-	public static double velocityMagnitude;//
-	public static double velocityAngle;//
-	
-	public static double xAcc;
-	public static double yAcc;
-	public static double zAcc;
-	public static double accMagnitude;
-	public static double accAngle;
+
 	
 
     Command autonomousCommand;
@@ -90,7 +73,9 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         
-        //do stuff
+        accelerometer.prints();
+        accelerometer.update();
+        
         
     }
     

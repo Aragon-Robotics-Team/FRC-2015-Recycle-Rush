@@ -62,7 +62,7 @@ public class Accelerometer1 extends Subsystem {
     public static double getZDistance() { //lol
     	return zPos;
     }
-    public static void update() {
+    public void update() {
     	xVel += getXAcc() * seconds;
     	yVel += getYAcc() * seconds;
     	zVel += getZAcc() * seconds;
@@ -115,7 +115,7 @@ public class Accelerometer1 extends Subsystem {
     	angleToReturn = Math.atan(slope);
     	return angleToReturn;
     }
-    public static void prints() {
+    public void prints() {
     	SmartDashboard.putNumber("X Acceleration", getXAcc());
 		SmartDashboard.putNumber("Y Acceleration", getYAcc());
 		SmartDashboard.putNumber("Z Acceleration", getZAcc());
