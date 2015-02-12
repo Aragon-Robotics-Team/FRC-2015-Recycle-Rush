@@ -17,7 +17,7 @@ Sahith Bhamidipati
 
 
 Driver Controls:
-
+=====================
 LB: Rollers in
 
 RB: Rollers out
@@ -25,9 +25,8 @@ RB: Rollers out
 L3/R3: Creep mode
 
 
-
 Operator Controls:
-
+=====================
 A: Set lift to bottom level
 
 B: Set lift to tote level
@@ -39,9 +38,8 @@ RB: Set pneumatics to in position
 start: Calibrate lift
 
 
-
-DevMode (Driver):
-
+Developer Mode (on driver controller):
+=====================
 A: Set lift to bottom level
 
 B: Set lift to tote level 
