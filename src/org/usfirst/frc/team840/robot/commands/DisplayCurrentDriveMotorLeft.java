@@ -21,7 +21,7 @@ public class DisplayCurrentDriveMotorLeft extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	SmartDashboard.putNumber("Left Drive Motor Draw", Robot.pdp.getCurrent(RobotMap.driveMotorLeft[0]));
+    	SmartDashboard.putNumber("Left Drive Motor Draw", Robot.pdp.getCurrent(0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

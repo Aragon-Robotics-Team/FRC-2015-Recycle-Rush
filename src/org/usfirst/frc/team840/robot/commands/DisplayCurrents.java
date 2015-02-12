@@ -12,6 +12,6 @@ public class DisplayCurrents extends CommandGroup {
         addParallel(new DisplayCurrentDriveMotorRight());
         addParallel(new DisplayCurrentIntakeMotorLeft());
         addParallel(new DisplayCurrentIntakeMotorRight());
-        addSequential(new DisplayCurrentLiftMotor());
+        addParallel(new DisplayCurrentLiftMotor());
     }
 }

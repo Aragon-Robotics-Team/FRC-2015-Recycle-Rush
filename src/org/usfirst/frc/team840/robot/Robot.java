@@ -38,6 +38,7 @@ public class Robot extends IterativeRobot {
     	drivetrain = new Drivetrain();
     	intake = new Intake();
     	stacker = new Stacker();
+    	pdp = new PDP();
 
     	oi = new OI();
 	}

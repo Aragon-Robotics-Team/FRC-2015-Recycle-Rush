@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 import org.usfirst.frc.team840.robot.RobotMap;
-import org.usfirst.frc.team840.robot.commands.DisplayCurrents;
+import org.usfirst.frc.team840.robot.commands.*;
 
 /**
  *
@@ -20,7 +20,7 @@ public class PDP extends Subsystem {
     }
 
     public void initDefaultCommand() {
-        setDefaultCommand(new DisplayCurrents());
+        setDefaultCommand(new DisplayCurrentDriveMotorLeft());
     }
     
     public double getCurrent(int port) {
