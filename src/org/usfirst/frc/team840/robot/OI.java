@@ -27,15 +27,15 @@ public class OI {
 		GamepadButton b = new GamepadButton(driverPad, "B");
 		GamepadButton y = new GamepadButton(driverPad, "Y");
 		GamepadButton a = new GamepadButton(driverPad, "A");
-		GamepadButton leftBumper = new gamepadButton(driverPad, "LEFT_BUMPER");
-		GamepadButton rightBumper = new gamepadButton(driverPad, "RIGHT_BUMPER");
-		GamepadButton start = new gamepadButton(driverPad, "START");
+		GamepadButton leftBumper = new GamepadButton(driverPad, "LEFT_BUMPER");
+		GamepadButton rightBumper = new GamepadButton(driverPad, "RIGHT_BUMPER");
+		GamepadButton start = new GamepadButton(driverPad, "START");
 		
 		GamepadButton a2 = new GamepadButton(operatorPad, "A");
 		GamepadButton b2 = new GamepadButton(operatorPad, "B");
-		GamepadButton leftBumper2 = new gamepadButton(operatorPad, "LEFT_BUMPER");
-		GamepadButton rightBumper2 = new gamepadButton(operatorPad, "RIGHT_BUMPER");
-		GamepadButton start2 = new gamepadButton(operatorPad, "START");
+		GamepadButton leftBumper2 = new GamepadButton(operatorPad, "LEFT_BUMPER");
+		GamepadButton rightBumper2 = new GamepadButton(operatorPad, "RIGHT_BUMPER");
+		GamepadButton start2 = new GamepadButton(operatorPad, "START");
 		
 		if(devMode) {
 			leftStick.toggleWhenActive(new ArcadeDriveCreep());
