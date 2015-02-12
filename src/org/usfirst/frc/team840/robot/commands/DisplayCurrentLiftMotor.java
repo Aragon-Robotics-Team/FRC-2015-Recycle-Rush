@@ -21,7 +21,7 @@ public class DisplayCurrentLiftMotor extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	SmartDashboard.putNumber("Lift Motor Draw", Robot.pdp.getCurrent(RobotMap.liftMotor[0]));
+    	SmartDashboard.putNumber("Lift Motor Draw", Robot.pdp.getCurrent(RobotMap.liftMotor[2]) + Robot.pdp.getCurrent(RobotMap.liftMotor[3]));	//The lift motor has two ports on the PDP, so we add the currents together.
     }
 
     // Make this return true when this Command no longer needs to run execute()

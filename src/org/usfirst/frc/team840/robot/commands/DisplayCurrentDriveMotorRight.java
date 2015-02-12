@@ -21,7 +21,7 @@ public class DisplayCurrentDriveMotorRight extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	SmartDashboard.putNumber("Right Drive Motor Draw", Robot.pdp.getCurrent(1));
+    	SmartDashboard.putNumber("Right Drive Motor Draw", Robot.pdp.getCurrent(RobotMap.driveMotorRight[2]) + Robot.pdp.getCurrent(RobotMap.driveMotorRight[3]));	//The drive motor has two ports on the PDP, so we add the currents together.
     }
 
     // Make this return true when this Command no longer needs to run execute()
