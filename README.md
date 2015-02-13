@@ -1,67 +1,36 @@
-FRC-2015-Recycle-Rush
-=====================
+#FRC-2015-Recycle-Rush
 This repository contains the Aragon Robotics Team's 2015 codebase for use in the game Recycle Rush. Code is written in Java using WPILib's Command-Based Robot structure.
-Members
-=====================
 
-Miles P. Olson 
-
-Ken Preiser 
-
-Jason Zhao 
-
-Shirin Amini 
-
-Chris Xiong 
-
-Omar Hussain 
-
-Ethan Levitt 
-
-Lily Zhou 
-
-Karena Zhang 
-
+#Members
+Miles P. Olson  
+Ken Preiser  
+Jason Zhao  
+Shirin Amini  
+Chris Xiong  
+Omar Hussain  
+Ethan Levitt  
+Lily Zhou  
+Karena Zhang  
 Sahith Bhamidipati
+<br><br><br>
+####Driver Controls:  
+<b>LB:</b> Rollers in  
+<b>RB:</b> Rollers out  
+<b>LJ/RJ:</b> Creep mode 
 
+####Operator Controls:
+<b>A:</b> Set lift to bottom level  
+<b>B:</b> Set lift to tote level  
+<b>LB:</b> Set pneumatics to out position  
+<b>RB:</b> Set pneumatics to in position  
+<b>Start:</b> Calibrate lift
 
-
-Driver Controls:
-=====================
-LB: Rollers in
-
-RB: Rollers out
-
-L3/R3: Creep mode
-
-
-Operator Controls:
-=====================
-A: Set lift to bottom level
-
-B: Set lift to tote level
-
-LB: Set pneumatics to out position
-
-RB: Set pneumatics to in position
-
-start: Calibrate lift
-
-
-Developer Mode (on driver controller):
-=====================
-A: Set lift to bottom level
-
-B: Set lift to tote level 
-
-X: Set pneumatics to in position
-
-Y: Set pneumatics to out position
-
-LB: Rollers in
-
-RB: Rollers out
-
-L3/R3: Creep mode 
-
-start: Calibrate lift
+####Developer Mode:
+<b>A:</b> Set lift to bottom level  
+<b>B:</b> Set lift to tote level   
+<b>X:</b> Set pneumatics to in position  
+<b>Y:</b> Set pneumatics to out position  
+<b>LB:</b> Rollers in  
+<b>RB:</b> Rollers out  
+<b>LJ/R:</b> Creep mode   
+<b>Start:</b> Calibrate lift
