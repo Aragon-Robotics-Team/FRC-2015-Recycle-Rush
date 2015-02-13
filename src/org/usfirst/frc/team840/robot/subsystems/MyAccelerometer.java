@@ -22,11 +22,7 @@ public class MyAccelerometer extends Subsystem {
 		return acc.getZ();
 	}
 	
-	public void prints() {
-		SmartDashboard.putString("X Acceleration", "" + getXAcc());
-		SmartDashboard.putString("Y Acceleration", "" + getYAcc());
-		SmartDashboard.putString("Z Acceleration", "" + getZAcc());
-	}
+
 	public void update() {
 		
 	}
