@@ -22,12 +22,13 @@ public class Stacker extends PIDSubsystem {
 	private int liftPosition;	//0 - 4; Bottom, score platform, score co-op, load tote, load bin 
 	
 	public final double liftMotorManualPower = 0.5;
+	public final double liftMotorInitPower = -0.125;
 	public final double bottomHeight = 0;
 	public final double loadToteHeight = 10;
 	
     // Initialize your subsystem here
     public Stacker() {
-        super("Stacker", 0.0325, 0.0, 0.0);	//TODO Tune PID constants
+        super("Stacker", .75, 0.0, 0.0);	//TODO Tune PID constants
         liftMotor = new Talon(RobotMap.liftMotor[0]);
         liftEncoder = new Encoder(RobotMap.liftEncoder[0], RobotMap.liftEncoder[1]);
         rodlessCylinderLeft = new DoubleSolenoid(1, RobotMap.rodlessCylinderLeft[0], RobotMap.rodlessCylinderLeft[1]);	//TODO Put CAN ID in robot map, but only after merge
@@ -44,7 +45,7 @@ public class Stacker extends PIDSubsystem {
         
         getPIDController().setContinuous(false);
         getPIDController().setAbsoluteTolerance(0.05);
-        getPIDController().setInputRange(0, 250);	//In encoder ticks. 250 is 50 in.
+        //getPIDController().setInputRange(0, 250);	//In encoder ticks. 250 is 50 in.
         setSetpoint(bottomHeight);
         enable();
         
@@ -53,6 +54,10 @@ public class Stacker extends PIDSubsystem {
     
     public void setLiftMotor(double power) {
     	liftMotor.set(power);
+    }
+    
+    public void resetLiftEncoder() {
+    	liftEncoder.reset();
     }
     
     public void slideOutLeft() {
