@@ -19,12 +19,17 @@ public class OI {
 	private Gamepad driverPad = new Gamepad(0);
 	private Gamepad operatorPad = new Gamepad(1);
 	
-	public Gamepad getGamepad() {
+	public Gamepad getDrivePad() {
 		return driverPad;
+	}
+	public Gamepad getOperatorPad() {
+		return operatorPad;
 	}
 	
 	//Set all the buttons and their tasks
 	public OI() {
+		
+
 		GamepadButton leftStick = new GamepadButton(driverPad, "LEFT_JOYSTICK"); //For driver controller
 		GamepadButton rightStick = new GamepadButton(driverPad, "RIGHT_JOYSTICK");
 		GamepadButton x = new GamepadButton(driverPad, "X");
@@ -67,7 +72,7 @@ public class OI {
 			leftBumper2.whenPressed(new SlideIn());
 			rightBumper2.whenPressed(new SlideOut());
 			
-			//start2.whenPressed(new Calibration());
-		}
+			start2.whenPressed(new RunAccelerometer());
+		} 
 	}
 }
