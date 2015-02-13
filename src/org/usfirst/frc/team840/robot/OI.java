@@ -9,11 +9,11 @@ import edu.art.frc.lib.util.GamepadButton;
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
-@SuppressWarnings("unused")
+
 public class OI {
 	
 	//Allows player to control with single gamepad
-	private boolean devMode = false;
+	private boolean devMode = true;
 	
 	//Initialize gamepad 
 	private Gamepad driverPad = new Gamepad(0);
@@ -54,8 +54,9 @@ public class OI {
 			leftBumper.whileHeld(new RollOut());
 			rightBumper.whileHeld(new RollIn());
 			
-			//start.whenPressed(new Calibration());
-		} else {
+			start.whenPressed(new ZeroLiftEncoder());
+		}
+		else {
 			leftStick.toggleWhenActive(new ArcadeDriveCreep()); //Driver controller
 			rightStick.toggleWhenActive(new ArcadeDriveCreep());
 			
@@ -67,7 +68,7 @@ public class OI {
 			leftBumper2.whenPressed(new SlideIn());
 			rightBumper2.whenPressed(new SlideOut());
 			
-			//start2.whenPressed(new Calibration());
+			start2.whenPressed(new ZeroLiftEncoder());
 		}
 	}
 }

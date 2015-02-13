@@ -22,9 +22,9 @@ public class RobotMap {
 	
 	public static final int[] liftEncoder = {4,5};
 	
-	public static final int[] bottomReed = {6};	//TODO Replace dummy values
+	public static final int[] bottomReed = {9};	//TODO Replace dummy values
 	public static final int[] loadToteReed = {7};
 	public static final int[] loadBinReed = {8};
-	public static final int[] scorePlatformReed = {9};
+	public static final int[] scorePlatformReed = {6};
 	public static final int[] scoreCoOpReed = {0};
 }
