@@ -7,25 +7,30 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ZeroLiftEncoder extends Command {
+public class LiftManualEncoder extends Command {
 
-    public ZeroLiftEncoder() {
+	private double setpoint;
+	private double input;
+	
+    public LiftManualEncoder(double input) {
+    	this.input = input;
         requires(Robot.stacker);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.stacker.resetLiftEncoder();
-    	Robot.stacker.setSetpoint(0);
+    	setpoint = Robot.stacker.getPosition();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	setpoint += input;
+    	Robot.stacker.setSetpoint(setpoint);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true
