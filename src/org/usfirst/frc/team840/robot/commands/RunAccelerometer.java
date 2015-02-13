@@ -1,6 +1,6 @@
 
 
-public class RunAccelerometer extends Commands {
+public class RunAccelerometer extends Command {
     
     private MyAccelerometer acc;
 
