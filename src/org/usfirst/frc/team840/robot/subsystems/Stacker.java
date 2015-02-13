@@ -25,6 +25,7 @@ public class Stacker extends PIDSubsystem {
 	public final double liftMotorInitPower = -0.125;
 	public final double bottomHeight = 0;
 	public final double loadToteHeight = 10;
+	public final double scorePlatformHeight = 5;
 	
     // Initialize your subsystem here
     public Stacker() {
