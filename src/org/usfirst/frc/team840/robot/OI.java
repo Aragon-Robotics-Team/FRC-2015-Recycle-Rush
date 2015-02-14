@@ -63,6 +63,8 @@ public class OI {
 			
 			leftBumper.whileHeld(new RollIn());
 			rightBumper.whileHeld(new RollOut());
+			y.whileHeld(new RollTurnClockwise());
+			x.whileHeld(new RollTurnCounterClockwise());
 		
 			a2.whenPressed(new SetLiftBottomEncoder()); //Operator controller
 			b2.whenPressed(new SetLiftLoadToteEncoder());
