@@ -33,6 +33,8 @@ public class OI {
 		GamepadButton a = new GamepadButton(driverPad, "A");
 		GamepadButton leftBumper = new GamepadButton(driverPad, "LEFT_BUMPER");
 		GamepadButton rightBumper = new GamepadButton(driverPad, "RIGHT_BUMPER");
+		GamepadButton leftTrigger = new GamepadButton(driverPad, "LEFT_TRIGGER");
+		GamepadButton rightTrigger = new GamepadButton(driverPad, "RIGHT_TRIGGER");
 		GamepadButton start = new GamepadButton(driverPad, "START");
 		
 		GamepadButton a2 = new GamepadButton(operatorPad, "A"); //For operator controller
@@ -48,11 +50,11 @@ public class OI {
 			
 			a.whenPressed(new SetLiftBottomEncoder());
 			b.whenPressed(new SetLiftLoadToteEncoder());
-			x.whenPressed(new SlideIn());
-			y.whenPressed(new SlideOut());
 			
 			leftBumper.whileHeld(new RollIn());
 			rightBumper.whileHeld(new RollOut());
+			leftTrigger.whenPressed(new SlideIn());
+			rightTrigger.whenPressed(new SlideOut());
 			
 			//start.whenPressed(new Calibration());
 		} else {
