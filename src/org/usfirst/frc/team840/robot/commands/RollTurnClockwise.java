@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  * This command spins the rollers to move items in.
  */
-public class RollIn extends Command {
+public class RollTurnClockwise extends Command {
     
-    public RollIn() {
+    public RollTurnClockwise() {
         requires(Robot.intake);
     }
 

@@ -7,16 +7,16 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  * This command spins the rollers to move items in.
  */
-public class RollIn extends Command {
+public class RollTurnCounterClockwise extends Command {
 
-    public RollIn() {
+    public RollTurnCounterClockwise() {
         requires(Robot.intake);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.intake.setLeft(-0.75);
-    	Robot.intake.setRight(0.75);
+    	Robot.intake.setLeft(0.75);
+    	Robot.intake.setRight(-0.75);
     }
 
     // Called repeatedly when this Command is scheduled to run
