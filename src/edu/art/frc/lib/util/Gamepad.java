@@ -16,15 +16,12 @@ public class Gamepad extends Joystick {
 	public double getLeftX() {
 		return getRawAxis(0);
 	}
-	
 	public double getLeftY() {
 		return getRawAxis(1);
 	}
-	
 	public double getRightX() {
 		return getRawAxis(2);
 	}
-	
 	public double getRightY() {
 		return getRawAxis(3);
 	}
@@ -33,7 +30,6 @@ public class Gamepad extends Joystick {
 	public boolean getButtonLeftJoystick() {
 		return getRawButton(11);
 	}
-	
 	public boolean getButtonRightJoystick() {
 		return getRawButton(12);
 	}
@@ -42,15 +38,12 @@ public class Gamepad extends Joystick {
 	public boolean getButtonA() {
 		return getRawButton(2);
 	}
-	
 	public boolean getButtonB() {
 		return getRawButton(3);
 	}
-
 	public boolean getButtonX() {
 		return getRawButton(1);
 	}
-
 	public boolean getButtonY() {
 		return getRawButton(4);
 	}
@@ -59,7 +52,6 @@ public class Gamepad extends Joystick {
 	public boolean getButtonBack() {
 		return getRawButton(9);
 	}
-	
 	public boolean getButtonStart() {
 		return getRawButton(10);
 	}
@@ -68,46 +60,24 @@ public class Gamepad extends Joystick {
 	public boolean getLeftBumper() {
 		return getRawButton(5);
 	}
-	
 	public boolean getLeftTrigger() {
 		return getRawButton(7);
 	}
-	
 	public boolean getRightBumper() {
 		return getRawButton(6);
 	}
-	
 	public boolean getRightTrigger() {
 		return getRawButton(8);
 	}
 	
 	//D-pad
-	public int getDPadAngle() {
-		return getPOV(0);
+	public double getDPadX() {
+		return getRawAxis(4);
 	}
-	
 	public boolean getDPadLeft() {
-		if(getDPadAngle() == 180)
-			return true;
-		else
-			return false;
+		return getDPadX() < -0.5;
 	}
 	public boolean getDPadRight() {
-		if(getDPadAngle() == 0)
-			return true;
-		else
-			return false;
-	}
-	public boolean getDPadUp() {
-		if(getDPadAngle() == 90)
-			return true;
-		else
-			return false;
-	}
-	public boolean getDPadDown() {
-		if(getDPadAngle() == 270)
-			return true;
-		else
-			return false;
+		return getDPadX() > 0.5;
 	}
 }
