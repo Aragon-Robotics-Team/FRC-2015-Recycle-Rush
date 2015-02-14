@@ -18,21 +18,18 @@ public class LiftManualEncoder extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setpoint = Robot.stacker.getPosition();
+    	setpoint = Robot.stacker.getSetpoint();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	setpoint += -1 * Robot.oi.getOperatorPad().getLeftY();	//Add the joystick value to the setpoint. Due to the speed at which commands are called, the max speed it 5 in. / sec 
+    	setpoint += -0.5 * Robot.oi.getOperatorPad().getLeftY();	//Add the joystick value to the setpoint. Due to the speed at which commands are called, the max speed it 5 in. / sec 
     	Robot.stacker.setSetpoint(-1 * setpoint);	//Motor is connected backwards
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Math.abs(Robot.stacker.getPosition() - setpoint) < threshold || Math.abs(Robot.oi.getOperatorPad().getLeftY()) < .125 )	//Stop the command when it is within the threshold
-        	return true;
-        else
-        	return false;
+    	return Math.abs(Robot.stacker.getPosition() - setpoint) < threshold;
     }
 
     // Called once after isFinished returns true
