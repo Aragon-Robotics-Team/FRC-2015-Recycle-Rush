@@ -29,7 +29,7 @@ Sahith Bhamidipati
 <b>A:</b> Set lift to bottom level  
 <b>B:</b> Set lift to tote level   
 <b>LT:</b> Set pneumatics to in position  
-<b>LT:</b> Set pneumatics to out position  
+<b>RT:</b> Set pneumatics to out position  
 <b>LB:</b> Rollers in  
 <b>RB:</b> Rollers out  
 <b>LJ/R:</b> Creep mode   
