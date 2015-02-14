@@ -19,6 +19,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static DrivetrainVanilla drivetrainVanilla;
+	public static DrivetrainPID drivetrainPID;
 	public static Intake intake;
 	public static Stacker stacker;
 	public static PDP pdp;
@@ -35,7 +36,6 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putNumber("Creep factor: ", 0.5);
     	SmartDashboard.putNumber("Lerp factor: ", 0.125);
     	
-    	drivetrainVanilla = new DrivetrainVanilla();
     	intake = new Intake();
     	stacker = new Stacker();
     	pdp = new PDP();
@@ -48,6 +48,8 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
+    	drivetrainPID = new DrivetrainPID();
+    	
         if (autonomousCommand != null) autonomousCommand.start();
     }
 
@@ -63,6 +65,9 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
+    	drivetrainPID = null;
+    	drivetrainVanilla = new DrivetrainVanilla();
+    	
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
 

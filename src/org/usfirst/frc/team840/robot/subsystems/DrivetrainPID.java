@@ -7,14 +7,14 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 
 /**
- *
+ *	This can only drive straight right now
  */
-public class Drivetrain extends PIDSubsystem {
+public class DrivetrainPID extends PIDSubsystem {
 
     private Talon driveMotorLeft, driveMotorRight;
     private Encoder driveEncoderLeft, driveEncoderRight;
     
-    public Drivetrain() {
+    public DrivetrainPID() {
     	super("Drivetrain", 0, 0, 0);
     	
     	driveMotorLeft = new Talon(RobotMap.driveMotorLeft[0]);
