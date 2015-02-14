@@ -20,6 +20,8 @@ public class RobotMap {
 	public static final int[] rodlessCylinderLeft = {0, 1};
 	public static final int[] rodlessCylinderRight = {2, 3};
 	
+	public static final int[] driveEncoderLeft = {0, 1};
+	public static final int[] driveEncoderRight = {2, 3};
 	public static final int[] liftEncoder = {4,5};
 	
 	public static final int[] bottomReed = {6};	//TODO Replace dummy values

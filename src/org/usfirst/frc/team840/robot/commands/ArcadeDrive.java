@@ -17,7 +17,7 @@ public class ArcadeDrive extends Command {
 	private double lerpedTurn;
 	
 	public ArcadeDrive() {
-        requires(Robot.drivetrain);
+        requires(Robot.drivetrainVanilla);
     }
 
     // Called just before this Command runs the first time
@@ -40,7 +40,7 @@ public class ArcadeDrive extends Command {
 		lerpedPower = Interpolation.lerp(currentPower, targetPower, lerpFactor);
 		lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, lerpFactor);
 		
-		Robot.drivetrain.arcadeDrive(lerpedPower, lerpedTurn);
+		Robot.drivetrainVanilla.arcadeDrive(lerpedPower, lerpedTurn);
 		
 		currentPower = lerpedPower;
 		currentTurn = lerpedTurn;
