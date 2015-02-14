@@ -18,10 +18,12 @@ public class ArcadeDrive extends Command {
 	
 	public ArcadeDrive() {
         requires(Robot.drivetrainVanilla);
+        requires(Robot.drivetrainPID);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	Robot.drivetrainPID.disable();
 		currentPower = 0;
 		currentTurn = 0;
     }
