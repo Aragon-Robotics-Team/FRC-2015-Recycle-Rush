@@ -13,14 +13,18 @@ import edu.art.frc.lib.util.GamepadButton;
 public class OI {
 	
 	//Allows player to control with single gamepad
-	private boolean devMode = true;
+	private boolean devMode = false;
 	
 	//Initialize gamepad 
 	private Gamepad driverPad = new Gamepad(0);
 	private Gamepad operatorPad = new Gamepad(1);
 	
-	public Gamepad getGamepad() {
+	public Gamepad getDriverPad() {
 		return driverPad;
+	}
+	
+	public Gamepad getOperatorPad() {
+		return operatorPad;
 	}
 	
 	//Set all the buttons and their tasks
@@ -38,13 +42,17 @@ public class OI {
 		
 		GamepadButton a2 = new GamepadButton(operatorPad, "A"); //For operator controller
 		GamepadButton b2 = new GamepadButton(operatorPad, "B");
+		GamepadButton x2 = new GamepadButton(operatorPad, "X");
+		GamepadButton y2 = new GamepadButton(operatorPad, "Y");
 		GamepadButton leftBumper2 = new GamepadButton(operatorPad, "LEFT_BUMPER");
 		GamepadButton rightBumper2 = new GamepadButton(operatorPad, "RIGHT_BUMPER");
+		GamepadButton leftTrigger2 = new GamepadButton(operatorPad, "LEFT_TRIGGER");
+		GamepadButton rightTrigger2 = new GamepadButton(operatorPad, "RIGHT_TRIGGER");
 		GamepadButton start2 = new GamepadButton(operatorPad, "START");
 		
 		
-		if(devMode) {
-			leftStick.toggleWhenActive(new ArcadeDriveCreep()); //Developer mode
+		if(devMode) {	//This must be redone
+			leftStick.toggleWhenActive(new ArcadeDriveCreep());
 			rightStick.toggleWhenActive(new ArcadeDriveCreep());
 			
 			a.whenPressed(new SetLiftBottomEncoder());
@@ -68,6 +76,10 @@ public class OI {
 		
 			a2.whenPressed(new SetLiftBottomEncoder()); //Operator controller
 			b2.whenPressed(new SetLiftLoadToteEncoder());
+			y2.whenPressed(new SetLiftScorePlatformEncoder());
+			
+			rightTrigger2.whileHeld(new LiftManualEncoder());
+			
 			leftBumper2.whenPressed(new SlideIn());
 			rightBumper2.whenPressed(new SlideOut());
 			

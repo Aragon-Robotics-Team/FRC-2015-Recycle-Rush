@@ -5,32 +5,31 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ *	The pulley that raises the lift is connected to a hall effect encoder. This command uses PID to set the lift to any position. The setpoint is dynamic and can be set by a joystick input.
  */
 public class LiftManualEncoder extends Command {
 
 	private double setpoint;
-	private double input;
+	private final double threshold = 0.5;	//TODO Tune experimentally (Units irrelevant, but make sure to match to the units in DistancePerPulse)
 	
-    public LiftManualEncoder(double input) {
-    	this.input = input;
+    public LiftManualEncoder() {
         requires(Robot.stacker);
+        setpoint = Robot.stacker.getPosition();
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	setpoint = Robot.stacker.getPosition();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	setpoint += input;
-    	Robot.stacker.setSetpoint(setpoint);
+    	setpoint += Robot.oi.getOperatorPad().getLeftY();	//Add the joystick value to the setpoint. Due to the speed at which commands are called, the max speed it 5 in. / sec 
+    	Robot.stacker.setSetpoint(-1 * setpoint);	//Motor is connected backwards
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return Math.abs(Robot.stacker.getPosition() - setpoint) < threshold;	//Stop the command when it is within the threshold
     }
 
     // Called once after isFinished returns true

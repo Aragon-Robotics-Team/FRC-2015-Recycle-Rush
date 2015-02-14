@@ -32,9 +32,9 @@ public class ArcadeDrive extends Command {
     	
 		SmartDashboard.putString("Driving mode: ", "Standard");
     	
-		targetPower = Robot.oi.getGamepad().getLeftY();
+		targetPower = Robot.oi.getDriverPad().getLeftY();
 		if (Math.abs(targetPower) < .0625) targetPower = 0;
-		targetTurn = Robot.oi.getGamepad().getRightX();
+		targetTurn = Robot.oi.getDriverPad().getRightX();
 		if (Math.abs(targetTurn) < .0625) targetTurn = 0;
     	
 		lerpedPower = Interpolation.lerp(currentPower, targetPower, lerpFactor);
