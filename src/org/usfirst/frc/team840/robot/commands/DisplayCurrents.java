@@ -21,11 +21,11 @@ public class DisplayCurrents extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	SmartDashboard.putNumber("Left Drive Motor Draw", Robot.pdp.getCurrent(RobotMap.driveMotorLeft[2]) + Robot.pdp.getCurrent(RobotMap.driveMotorLeft[3]));	//The drive motors have two ports on the PDP, so we add the currents together.
-    	SmartDashboard.putNumber("Right Drive Motor Draw", Robot.pdp.getCurrent(RobotMap.driveMotorRight[2]) + Robot.pdp.getCurrent(RobotMap.driveMotorRight[3]));
+    	SmartDashboard.putNumber("Left Drive Motor Draw", Robot.pdp.getCurrent(RobotMap.driveMotorLeft[2]));
+    	SmartDashboard.putNumber("Right Drive Motor Draw", Robot.pdp.getCurrent(RobotMap.driveMotorRight[2]));
     	SmartDashboard.putNumber("Left Intake Motor Draw", Robot.pdp.getCurrent(RobotMap.intakeMotorLeft[2]));
     	SmartDashboard.putNumber("Right Intake Motor Draw", Robot.pdp.getCurrent(RobotMap.intakeMotorRight[2]));
-    	SmartDashboard.putNumber("Lift Motor Draw", Robot.pdp.getCurrent(RobotMap.liftMotor[2]) + Robot.pdp.getCurrent(RobotMap.liftMotor[3]));	//The lift motor also has two ports on the PDP.
+    	SmartDashboard.putNumber("Lift Motor Draw", Robot.pdp.getCurrent(RobotMap.liftMotor[2]) + Robot.pdp.getCurrent(RobotMap.liftMotor[3]));	//The lift motor has two ports on the PDP, so we add them together.
     }
 
     // Make this return true when this Command no longer needs to run execute()

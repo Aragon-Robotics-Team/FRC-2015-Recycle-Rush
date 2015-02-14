@@ -11,8 +11,8 @@ package org.usfirst.frc.team840.robot;
 public class RobotMap {
     
 
-    public static final int[] driveMotorLeft = {0, 1, 3, 2};
-    public static final int[] driveMotorRight = {1, -1, 15, 14};
+    public static final int[] driveMotorLeft = {0, 1, 3};
+    public static final int[] driveMotorRight = {1, -1, 15};
     public static final int[] intakeMotorLeft = {4, -1, 0};
     public static final int[] intakeMotorRight = {5, 1, 1};
 	public static final int[] liftMotor = {3, 1, 12, 13};
