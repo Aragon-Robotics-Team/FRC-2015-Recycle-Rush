@@ -29,7 +29,10 @@ public class LiftManualEncoder extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Math.abs(Robot.stacker.getPosition() - setpoint) < threshold;	//Stop the command when it is within the threshold
+        if(Math.abs(Robot.stacker.getPosition() - setpoint) < threshold || Math.abs(Robot.oi.getOperatorPad().getLeftY()) < .125 )	//Stop the command when it is within the threshold
+        	return true;
+        else
+        	return false;
     }
 
     // Called once after isFinished returns true
