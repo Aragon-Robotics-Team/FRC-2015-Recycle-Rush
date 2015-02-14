@@ -51,16 +51,16 @@ public class OI {
 			x.whenPressed(new SlideIn());
 			y.whenPressed(new SlideOut());
 			
-			leftBumper.whileHeld(new RollOut());
-			rightBumper.whileHeld(new RollIn());
+			leftBumper.whileHeld(new RollIn());
+			rightBumper.whileHeld(new RollOut());
 			
 			//start.whenPressed(new Calibration());
 		} else {
 			leftStick.toggleWhenActive(new ArcadeDriveCreep()); //Driver controller
 			rightStick.toggleWhenActive(new ArcadeDriveCreep());
 			
-			leftBumper.whileHeld(new RollOut());
-			rightBumper.whileHeld(new RollIn());
+			leftBumper.whileHeld(new RollIn());
+			rightBumper.whileHeld(new RollOut());
 		
 			a2.whenPressed(new SetLiftBottomEncoder()); //Operator controller
 			b2.whenPressed(new SetLiftLoadToteEncoder());
