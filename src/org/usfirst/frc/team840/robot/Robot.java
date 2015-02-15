@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team840.robot;
 
+import org.usfirst.frc.team840.robot.commands.Autonomous;
 import org.usfirst.frc.team840.robot.subsystems.*;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -41,6 +42,8 @@ public class Robot extends IterativeRobot {
     	pdp = new PDP();
 
     	oi = new OI();
+    	
+    	autonomousCommand = new Autonomous();
 	}
 	
 	public void disabledPeriodic() {
@@ -48,8 +51,6 @@ public class Robot extends IterativeRobot {
 	}
 
     public void autonomousInit() {
-    	
-    	
         if (autonomousCommand != null) autonomousCommand.start();
     }
 
