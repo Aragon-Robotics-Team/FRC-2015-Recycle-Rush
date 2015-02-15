@@ -12,8 +12,8 @@ import edu.art.frc.lib.util.GamepadButton;
 @SuppressWarnings("unused")
 public class OI {
 	
-	private Gamepad driverPad = new Gamepad(0);
-	private Gamepad operatorPad = new Gamepad(1);
+	private Gamepad driverPad = new Gamepad(0);	//Gamepad for the main driver. This controller should have control over the drivetrain and rollers, as well as robot wide overrides.
+	private Gamepad operatorPad = new Gamepad(1);	//Gamepad for the secondary driver. This controller should have control over the lift and pneumatics.
 	
 	public Gamepad getDriverPad() {
 		return driverPad;
@@ -48,8 +48,7 @@ public class OI {
 		GamepadButton rightStickOperator = new GamepadButton(operatorPad, "RIGHT_JOYSTICK");
 		GamepadButton startOperator = new GamepadButton(operatorPad, "START");
 		
-		
-		
+		//Driver controls
 		leftStickDriver.toggleWhenActive(new ArcadeDriveCreep());
 		
 		leftBumperDriver.whileHeld(new RollIn());
@@ -57,6 +56,7 @@ public class OI {
 		leftTriggerDriver.whileHeld(new RollTurnClockwise());
 		rightTriggerDriver.whileHeld(new RollTurnClockwise());
 	
+		//Operator controlls
 		leftStickOperator.whileHeld(new LiftManualEncoder());
 		
 		aOperator.whenPressed(new SetLiftBottomEncoder());
