@@ -1,6 +1,7 @@
 package org.usfirst.frc.team840.robot.subsystems;
 
 import org.usfirst.frc.team840.robot.RobotMap;
+import org.usfirst.frc.team840.robot.commands.ArcadeDrive;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -17,7 +18,7 @@ public class DrivetrainPID extends PIDSubsystem {
     private RobotDrive drive;
     
     public DrivetrainPID() {
-    	super("Drivetrain", 0, 0, 0);
+    	super("Drivetrain", 8, 0, 0);	//TODO Tune
     	
     	driveMotorLeft = new Talon(RobotMap.driveMotorLeft[0]);
     	driveMotorRight = new Talon(RobotMap.driveMotorRight[0]);
@@ -25,13 +26,21 @@ public class DrivetrainPID extends PIDSubsystem {
     	driveEncoderRight = new Encoder(RobotMap.driveEncoderRight[0], RobotMap.driveEncoderRight[1]);
     	drive = new RobotDrive(driveMotorLeft, driveMotorRight);
     	
+    	driveEncoderLeft.setReverseDirection(false);
+    	driveEncoderRight.setReverseDirection(false);
+    	driveEncoderLeft.setDistancePerPulse((4 * Math.PI) / 4);	//Circumference over ticks per rotation. All units in in.
+    	driveEncoderRight.setDistancePerPulse((4 * Math.PI) / 4);	//Circumference over ticks per rotation. All units in in.
+    	driveEncoderLeft.reset();
+    	driveEncoderRight.reset();
+        
+        getPIDController().setContinuous(true);
+        getPIDController().setAbsoluteTolerance(1);
         setSetpoint(0);
         enable();
     }
     
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new ArcadeDrive());
     }
     
     protected double returnPIDInput() {
@@ -41,6 +50,11 @@ public class DrivetrainPID extends PIDSubsystem {
     protected void usePIDOutput(double output) {
         driveMotorLeft.set(output);
         driveMotorRight.set(output);
+    }
+    
+    public void resetEncoders() {
+    	driveEncoderLeft.reset();
+    	driveEncoderRight.reset();
     }
     
     public void arcadeDrive(double power, double turn) {
