@@ -18,13 +18,12 @@ public class ArcadeDriveCreep extends Command {
 	private double lerpedTurn;
 	
 	public ArcadeDriveCreep() {	
-		requires(Robot.drivetrainVanilla);
 		requires(Robot.drivetrainPID);
 	}
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
-		Robot.drivetrainPID.disable();
+		Robot.drivetrainPID.getPIDController().free();
 		currentPower = 0;
 		currentTurn = 0;
 	}
@@ -44,7 +43,7 @@ public class ArcadeDriveCreep extends Command {
 		lerpedPower = Interpolation.lerp(currentPower, targetPower, lerpFactor);
 		lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, lerpFactor);
     	
-		Robot.drivetrainVanilla.arcadeDrive(lerpedPower * creepFactor, lerpedTurn * creepFactor);
+		Robot.drivetrainPID.arcadeDrive(lerpedPower * creepFactor, lerpedTurn * creepFactor);
     	
 		currentPower = lerpedPower;
 		currentTurn = lerpedTurn;
