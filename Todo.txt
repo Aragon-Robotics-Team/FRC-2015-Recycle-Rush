@@ -1,0 +1,18 @@
+Must do:
+PID drivetrain
+Autonomous command testing
+Full autonomous command
+
+Should do:
+Loading/scoring macros
+Fix lift jutter on manual mode
+More driver station information (variable states, setpoints, etc)
+Delete unused commands/subsystem components
+Replace all "magic numbers" with constants
+Better comments
+
+Requests:
+Software stops for lift
+	-Cannot go above x/below y
+	-Cannot retract in range x - y
+Ultrasonic for positioning against ramp
