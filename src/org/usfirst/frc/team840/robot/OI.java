@@ -56,7 +56,7 @@ public class OI {
 		leftTriggerDriver.whileHeld(new RollTurnClockwise());
 		rightTriggerDriver.whileHeld(new RollTurnClockwise());
 	
-		//Operator controlls
+		//Operator controls
 		leftStickOperator.whileHeld(new LiftManualEncoder());
 		
 		aOperator.whenPressed(new SetLiftBottomEncoder());
