@@ -7,19 +7,18 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DriveForward extends Command {
+public class DriveRight extends Command {
 
 	private double setpoint;
 	
-    public DriveForward(double setpoint) {	//All units in inches
-        requires(Robot.drivetrainPID);
+    public DriveRight(double setpoint) {
+        requires(Robot.rightDrive);
         this.setpoint = setpoint;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.drivetrainPID.resetEncoders();
-    	Robot.drivetrainPID.setSetpoint(setpoint);
+    	Robot.rightDrive.setSetpoint(setpoint);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -28,7 +27,7 @@ public class DriveForward extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.drivetrainPID.getPIDController().onTarget();
+        return Math.abs(Robot.rightDrive.getPosition() - setpoint) < 1;
     }
 
     // Called once after isFinished returns true

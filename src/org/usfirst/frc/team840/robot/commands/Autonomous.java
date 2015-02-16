@@ -1,7 +1,5 @@
 package org.usfirst.frc.team840.robot.commands;
 
-import org.usfirst.frc.team840.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
@@ -10,7 +8,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Autonomous extends CommandGroup {
     
     public  Autonomous() {
-        requires(Robot.drivetrainPID);
-        addSequential(new DriveForward(24));
+        addSequential(new DriveStraight(24));
     }
 }

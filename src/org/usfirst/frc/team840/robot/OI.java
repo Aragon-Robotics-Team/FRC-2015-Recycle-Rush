@@ -41,6 +41,7 @@ public class OI {
 		GamepadButton rightBumper2 = new GamepadButton(operatorPad, "RIGHT_BUMPER");
 		GamepadButton start2 = new GamepadButton(operatorPad, "START");
 		
+		//GamepadButton fakeButton = new GamepadButton(driverPad, "asdf");
 		
 		if(devMode) {
 			leftStick.toggleWhenActive(new ArcadeDriveCreep()); //Developer mode
@@ -66,6 +67,8 @@ public class OI {
 			b2.whenPressed(new SetLiftLoadToteEncoder());
 			leftBumper2.whenPressed(new SlideIn());
 			rightBumper2.whenPressed(new SlideOut());
+			
+			//fakeButton.whenInactive(new ArcadeDrive());
 			
 			//start2.whenPressed(new Calibration());
 		}

@@ -16,7 +16,7 @@ public class Stacker extends PIDSubsystem {
 
 	private Talon liftMotor;
 	private Encoder liftEncoder;
-	private DigitalInput bottomReed, loadToteReed, loadBinReed, scorePlatformReed, scoreCoOpReed;
+	private DigitalInput bottomReed, loadToteReed, loadBinReed, scorePlatformReed/*, scoreCoOpReed*/;
 	private DoubleSolenoid rodlessCylinderLeft, rodlessCylinderRight;
 	
 	private int liftPosition;	//0 - 4; Bottom, score platform, score co-op, load tote, load bin 
@@ -37,7 +37,7 @@ public class Stacker extends PIDSubsystem {
         loadToteReed = new DigitalInput(RobotMap.loadToteReed[0]);
         loadBinReed = new DigitalInput(RobotMap.loadBinReed[0]);
         scorePlatformReed = new DigitalInput(RobotMap.scorePlatformReed[0]);
-        scoreCoOpReed = new DigitalInput(RobotMap.scoreCoOpReed[0]);
+        //scoreCoOpReed = new DigitalInput(RobotMap.scoreCoOpReed[0]);
         
         liftEncoder.setReverseDirection(false);
         liftEncoder.setDistancePerPulse((2 * Math.PI) / 497);	//Circumference over ticks per rotation. All units in in.
@@ -92,9 +92,9 @@ public class Stacker extends PIDSubsystem {
     	return scorePlatformReed.get();
     }
     
-    public boolean getScoreCoOpReed() {
+    /*public boolean getScoreCoOpReed() {
     	return scoreCoOpReed.get();
-    }
+    }*/
     
     public void initDefaultCommand() {
         setDefaultCommand(new HoldLift());

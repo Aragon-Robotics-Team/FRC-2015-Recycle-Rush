@@ -47,7 +47,7 @@ public class SetLiftMagnets extends Command {
         switch(setpoint) {
         	case 0: return Robot.stacker.getBottomReed();
         	case 1: return Robot.stacker.getScorePlatformReed();
-        	case 2: return Robot.stacker.getScoreCoOpReed();
+        	//case 2: return Robot.stacker.getScoreCoOpReed();
         	case 3: return Robot.stacker.getLoadToteReed();
         	case 4: return Robot.stacker.getLoadBinReed();
         	

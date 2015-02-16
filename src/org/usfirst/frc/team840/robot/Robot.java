@@ -18,8 +18,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
-
-	public static DrivetrainPID drivetrainPID;
+	
+	public static LeftDrive leftDrive;
+	public static RightDrive rightDrive;
 	public static Intake intake;
 	public static Stacker stacker;
 	public static PDP pdp;
@@ -36,7 +37,8 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putNumber("Creep factor: ", 0.5);
     	SmartDashboard.putNumber("Lerp factor: ", 0.125);
     	
-    	drivetrainPID = new DrivetrainPID();
+    	rightDrive = new RightDrive();
+    	leftDrive = new LeftDrive();
     	intake = new Intake();
     	stacker = new Stacker();
     	pdp = new PDP();

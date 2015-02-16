@@ -3,6 +3,7 @@ package org.usfirst.frc.team840.robot.commands;
 import org.usfirst.frc.team840.robot.Robot;
 
 import edu.art.frc.lib.util.Interpolation;
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -15,14 +16,19 @@ public class ArcadeDrive extends Command {
 	private double targetTurn;
 	private double lerpedPower;
 	private double lerpedTurn;
+	private RobotDrive drive;
 	
 	public ArcadeDrive() {
-        requires(Robot.drivetrainPID);
+        requires(Robot.leftDrive);
+        requires(Robot.rightDrive);
+        
+        drive = new RobotDrive(Robot.leftDrive.getDriveMotor(), Robot.rightDrive.getDriveMotor());
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.drivetrainPID.getPIDController().free();
+    	Robot.leftDrive.getPIDController().free();
+    	Robot.rightDrive.getPIDController().free();
 		currentPower = 0;
 		currentTurn = 0;
     }
@@ -41,7 +47,7 @@ public class ArcadeDrive extends Command {
 		lerpedPower = Interpolation.lerp(currentPower, targetPower, lerpFactor);
 		lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, lerpFactor);
 		
-		Robot.drivetrainPID.arcadeDrive(lerpedPower, lerpedTurn);
+		drive.arcadeDrive(lerpedPower, lerpedTurn);
 		
 		currentPower = lerpedPower;
 		currentTurn = lerpedTurn;
