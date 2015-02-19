@@ -47,7 +47,7 @@ public class OI {
 		leftBumperDriver.whileHeld(new RollIn());
 		rightBumperDriver.whileHeld(new RollOut());
 		leftTriggerDriver.whileHeld(new RollTurnClockwise());
-		rightTriggerDriver.whileHeld(new RollTurnClockwise());
+		rightTriggerDriver.whileHeld(new RollTurnCounterClockwise());
 	
 		//Operator controls
 		leftStickOperator.whileHeld(new LiftManualEncoder());
