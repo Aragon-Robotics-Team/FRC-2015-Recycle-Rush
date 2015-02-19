@@ -3,7 +3,6 @@ package org.usfirst.frc.team840.robot.subsystems;
 import org.usfirst.frc.team840.robot.RobotMap;
 import org.usfirst.frc.team840.robot.commands.HoldLift;
 
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
