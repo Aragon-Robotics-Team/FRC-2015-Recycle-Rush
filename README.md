@@ -14,7 +14,7 @@ Karena Zhang
 Sahith Bhamidipati
 <br><br><br>
 ####Driver Controls:  
-<b>LB:</b> Rollers in  
+<b>LB:</b> Rollers in
 <br><b>RB:</b> Rollers out
 <br><b>LT:</b> Rollers clockwise
 <br><b>RT:</b> Rollers counterclockwise
@@ -23,9 +23,9 @@ Sahith Bhamidipati
 ####Operator Controls:
 
 <b>Left stick:</b> Manualy control lift
-<br><b>A:</b> Set lift to bottom level  
+<br><b>A:</b> Set lift to bottom level
 <br><b>B:</b> Set lift to tote level
 <br><b>Y:</b> Set lift to score platform level
-<br><b>LT:</b> Set pneumatics to out position  
-<br><b>LB:</b> Set pneumatics to in position  
+<br><b>LT:</b> Set pneumatics to out position
+<br><b>LB:</b> Set pneumatics to in position
 <br><b>Start:</b> Calibrate lift
