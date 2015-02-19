@@ -15,17 +15,17 @@ Sahith Bhamidipati
 <br><br><br>
 ####Driver Controls:  
 <b>LB:</b> Rollers in  
-<b>RB:</b> Rollers out
-<b>LT:</b> Rollers clockwise
-<b>RT:</b> Rollers counterclockwise
-<b>L3/R3:</b> Creep mode 
+<br><b>RB:</b> Rollers out
+<br><b>LT:</b> Rollers clockwise
+<br><b>RT:</b> Rollers counterclockwise
+<br><b>L3/R3:</b> Creep mode 
 
 ####Operator Controls:
 
-<b>Left stick</b> Manualy control lift
-<b>A:</b> Set lift to bottom level  
-<b>B:</b> Set lift to tote level
-<b>Y:</b> Set lift to score platform level
-<b>LT:</b> Set pneumatics to out position  
-<b>LB:</b> Set pneumatics to in position  
-<b>Start:</b> Calibrate lift
+<b>Left stick:</b> Manualy control lift
+<br><b>A:</b> Set lift to bottom level  
+<br><b>B:</b> Set lift to tote level
+<br><b>Y:</b> Set lift to score platform level
+<br><b>LT:</b> Set pneumatics to out position  
+<br><b>LB:</b> Set pneumatics to in position  
+<br><b>Start:</b> Calibrate lift
