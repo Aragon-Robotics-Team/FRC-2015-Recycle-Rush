@@ -1,6 +1,7 @@
 package org.usfirst.frc.team840.robot.commands;
 
 import org.usfirst.frc.team840.robot.Robot;
+import org.usfirst.frc.team840.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -24,7 +25,7 @@ public class LiftManualEncoder extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	setpoint += -0.5 * Robot.oi.getOperatorPad().getLeftY();	//Add the joystick value to the setpoint. Due to the speed at which commands are called, the max speed it 5 in. / sec 
-    	Robot.stacker.setSetpoint(-1 * setpoint);	//Motor is connected backwards
+    	Robot.stacker.setSetpoint(RobotMap.liftMotor[1] * setpoint);	//Uses liftMotor multiplier
     }
 
     // Make this return true when this Command no longer needs to run execute()
