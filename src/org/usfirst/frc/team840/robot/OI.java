@@ -12,8 +12,10 @@ import edu.art.frc.lib.util.GamepadButton;
 @SuppressWarnings("unused")
 public class OI {
 	
-	private Gamepad driverPad = new Gamepad(0);	//Gamepad for the main driver. This controller should have control over the drivetrain and rollers, as well as robot wide overrides.
-	private Gamepad operatorPad = new Gamepad(1);	//Gamepad for the secondary driver. This controller should have control over the lift and pneumatics.
+	//Gamepad for the main driver. This controller should have control over the drivetrain and rollers, as well as robot wide overrides.
+	private Gamepad driverPad = new Gamepad(0);	
+	//Gamepad for the secondary driver. This controller should have control over the lift and pneumatics.
+	private Gamepad operatorPad = new Gamepad(1);
 	
 	public Gamepad getDriverPad() {
 		return driverPad;
