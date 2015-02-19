@@ -16,7 +16,6 @@ public class Stacker extends PIDSubsystem {
 
 	private Talon liftMotor;
 	private Encoder liftEncoder;
-	private DigitalInput bottomReed, loadToteReed, loadBinReed, scorePlatformReed, scoreCoOpReed;
 	private DoubleSolenoid rodlessCylinderLeft, rodlessCylinderRight;
 	
 	private int liftPosition;	//0 - 4; Bottom, score platform, score co-op, load tote, load bin 
@@ -34,12 +33,7 @@ public class Stacker extends PIDSubsystem {
         liftEncoder = new Encoder(RobotMap.liftEncoder[0], RobotMap.liftEncoder[1]);
         rodlessCylinderLeft = new DoubleSolenoid(1, RobotMap.rodlessCylinderLeft[0], RobotMap.rodlessCylinderLeft[1]);	//TODO Put CAN ID in robot map, but only after merge
         rodlessCylinderRight = new DoubleSolenoid(1, RobotMap.rodlessCylinderRight[0], RobotMap.rodlessCylinderRight[1]);
-        bottomReed = new DigitalInput(RobotMap.bottomReed[0]);
-        loadToteReed = new DigitalInput(RobotMap.loadToteReed[0]);
-        loadBinReed = new DigitalInput(RobotMap.loadBinReed[0]);
-        scorePlatformReed = new DigitalInput(RobotMap.scorePlatformReed[0]);
-        scoreCoOpReed = new DigitalInput(RobotMap.scoreCoOpReed[0]);
-        
+
         liftEncoder.setReverseDirection(false);
         liftEncoder.setDistancePerPulse((2 * Math.PI) / 497);	//Circumference over ticks per rotation. All units in in.
         liftEncoder.reset();
@@ -75,26 +69,6 @@ public class Stacker extends PIDSubsystem {
     
     public void slideInRight() {
     	rodlessCylinderRight.set(DoubleSolenoid.Value.kReverse);
-    }
-    
-    public boolean getBottomReed() {
-    	return bottomReed.get();
-    }
-    
-    public boolean getLoadToteReed() {
-    	return loadToteReed.get();
-    }
-    
-    public boolean getLoadBinReed() {
-    	return loadBinReed.get();
-    }
-
-    public boolean getScorePlatformReed() {
-    	return scorePlatformReed.get();
-    }
-    
-    public boolean getScoreCoOpReed() {
-    	return scoreCoOpReed.get();
     }
     
     public void initDefaultCommand() {
