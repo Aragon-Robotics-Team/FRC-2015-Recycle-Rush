@@ -1,7 +1,7 @@
 package org.usfirst.frc.team840.robot.subsystems;
 
 import org.usfirst.frc.team840.robot.RobotMap;
-import org.usfirst.frc.team840.robot.commands.HoldLift;
+import org.usfirst.frc.team840.robot.commands.lift.LiftHold;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
@@ -45,7 +45,7 @@ public class Lift extends PIDSubsystem {
     }
 	
     public void initDefaultCommand() {
-        setDefaultCommand(new HoldLift());
+        setDefaultCommand(new LiftHold());
     }
     
     protected double returnPIDInput() {

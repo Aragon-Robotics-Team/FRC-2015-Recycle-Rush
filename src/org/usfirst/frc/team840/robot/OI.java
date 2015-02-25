@@ -2,6 +2,13 @@ package org.usfirst.frc.team840.robot;
 
 import org.usfirst.frc.team840.robot.commands.*;
 import org.usfirst.frc.team840.robot.commands.driving.ArcadeDriveCreep;
+import org.usfirst.frc.team840.robot.commands.lift.LiftManual;
+import org.usfirst.frc.team840.robot.commands.lift.ZeroLiftEncoder;
+import org.usfirst.frc.team840.robot.commands.lift.presets.SetLiftBottom;
+import org.usfirst.frc.team840.robot.commands.lift.presets.SetLiftLoadTote;
+import org.usfirst.frc.team840.robot.commands.lift.presets.SetLiftScorePlatform;
+import org.usfirst.frc.team840.robot.commands.sliders.SlideIn;
+import org.usfirst.frc.team840.robot.commands.sliders.SlideOut;
 
 import edu.art.frc.lib.util.Gamepad;
 import edu.art.frc.lib.util.GamepadButton;
@@ -58,11 +65,11 @@ public class OI {
 		rightTriggerDriver.whileHeld(new RollTurnClockwise());
 	
 		//Operator controls
-		leftStickOperator.whileHeld(new LiftManualEncoder());
+		leftStickOperator.whileHeld(new LiftManual());
 		
-		aOperator.whenPressed(new SetLiftBottomEncoder());
-		bOperator.whenPressed(new SetLiftLoadToteEncoder());
-		yOperator.whenPressed(new SetLiftScorePlatformEncoder());
+		aOperator.whenPressed(new SetLiftBottom());
+		bOperator.whenPressed(new SetLiftLoadTote());
+		yOperator.whenPressed(new SetLiftScorePlatform());
 		
 		leftBumperOperator.whenPressed(new SlideIn());
 		leftTriggerOperator.whenPressed(new SlideOut());

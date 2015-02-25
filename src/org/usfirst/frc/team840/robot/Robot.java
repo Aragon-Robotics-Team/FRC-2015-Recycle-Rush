@@ -23,7 +23,6 @@ public class Robot extends IterativeRobot {
 	public static Intake intake;
 	public static Lift lift;
 	public static Sliders sliders;
-	public static Stacker stacker;
 	public static PDP pdp;
 	
 	public static OI oi;
@@ -42,8 +41,7 @@ public class Robot extends IterativeRobot {
     	rightDrive = new RightDrive();
     	intake = new Intake();
     	lift = new Lift();
-    	stacker = new Stacker();
-    	stacker = new Stacker();
+    	sliders = new Sliders();
     	pdp = new PDP();
 
     	oi = new OI();
