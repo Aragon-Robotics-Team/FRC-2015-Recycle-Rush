@@ -1,7 +1,7 @@
 package org.usfirst.frc.team840.robot.subsystems;
 
 import org.usfirst.frc.team840.robot.RobotMap;
-import org.usfirst.frc.team840.robot.commands.ArcadeDrive;
+import org.usfirst.frc.team840.robot.commands.driving.ArcadeDrive;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;

@@ -1,4 +1,4 @@
-package org.usfirst.frc.team840.robot.commands;
+package org.usfirst.frc.team840.robot.commands.driving;
 
 import org.usfirst.frc.team840.robot.Robot;
 
