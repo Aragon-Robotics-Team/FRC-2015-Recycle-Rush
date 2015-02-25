@@ -2,6 +2,9 @@ package org.usfirst.frc.team840.robot;
 
 import org.usfirst.frc.team840.robot.commands.*;
 import org.usfirst.frc.team840.robot.commands.driving.ArcadeDriveCreep;
+import org.usfirst.frc.team840.robot.commands.intake.RollIn;
+import org.usfirst.frc.team840.robot.commands.intake.RollOut;
+import org.usfirst.frc.team840.robot.commands.intake.RollTurnClockwise;
 import org.usfirst.frc.team840.robot.commands.lift.LiftManual;
 import org.usfirst.frc.team840.robot.commands.lift.ZeroLiftEncoder;
 import org.usfirst.frc.team840.robot.commands.lift.presets.SetLiftBottom;

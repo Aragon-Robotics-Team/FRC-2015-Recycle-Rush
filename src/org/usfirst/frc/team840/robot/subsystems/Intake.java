@@ -1,7 +1,7 @@
 package org.usfirst.frc.team840.robot.subsystems;
 
 import org.usfirst.frc.team840.robot.RobotMap;
-import org.usfirst.frc.team840.robot.commands.RollStop;
+import org.usfirst.frc.team840.robot.commands.intake.RollStop;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
