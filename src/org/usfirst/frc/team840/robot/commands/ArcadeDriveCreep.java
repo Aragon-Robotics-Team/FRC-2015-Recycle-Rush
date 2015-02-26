@@ -42,7 +42,7 @@ public class ArcadeDriveCreep extends Command {
 		lerpedPower = Interpolation.lerp(currentPower, targetPower, lerpFactor);
 		lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, lerpFactor);
     	
-		Robot.drivetrain.arcadeDrive(lerpedPower * creepFactor, lerpedTurn * creepFactor);
+		Robot.drivetrain.arcadeDrive(lerpedPower * creepFactor, -1 * lerpedTurn * creepFactor);
     	
 		currentPower = lerpedPower;
 		currentTurn = lerpedTurn;
