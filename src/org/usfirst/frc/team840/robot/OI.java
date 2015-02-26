@@ -24,48 +24,16 @@ public class OI {
 	}
 	
 	public OI() {
-		GamepadButton aDriver = new GamepadButton(driverPad, "A");
-		GamepadButton bDriver = new GamepadButton(driverPad, "B");
-		GamepadButton yDriver = new GamepadButton(driverPad, "Y");
-		GamepadButton xDriver = new GamepadButton(driverPad, "X");
-		GamepadButton leftBumperDriver = new GamepadButton(driverPad, "LEFT_BUMPER");
-		GamepadButton rightBumperDriver = new GamepadButton(driverPad, "RIGHT_BUMPER");
-		GamepadButton leftTriggerDriver = new GamepadButton(driverPad, "LEFT_TRIGGER");
-		GamepadButton rightTriggerDriver = new GamepadButton(driverPad, "RIGHT_TRIGGER");
-		GamepadButton leftStickDriver = new GamepadButton(driverPad, "LEFT_JOYSTICK");
-		GamepadButton rightStickDriver = new GamepadButton(driverPad, "RIGHT_JOYSTICK");
-		GamepadButton startDriver = new GamepadButton(driverPad, "START");
-		
 		GamepadButton aOperator = new GamepadButton(operatorPad, "A");
 		GamepadButton bOperator = new GamepadButton(operatorPad, "B");
 		GamepadButton xOperator = new GamepadButton(operatorPad, "X");
 		GamepadButton yOperator = new GamepadButton(operatorPad, "Y");
-		GamepadButton leftBumperOperator = new GamepadButton(operatorPad, "LEFT_BUMPER");
-		GamepadButton rightBumperOperator = new GamepadButton(operatorPad, "RIGHT_BUMPER");
-		GamepadButton leftTriggerOperator = new GamepadButton(operatorPad, "LEFT_TRIGGER");
-		GamepadButton rightTriggerOperator = new GamepadButton(operatorPad, "RIGHT_TRIGGER");
-		GamepadButton leftStickOperator = new GamepadButton(operatorPad, "LEFT_JOYSTICK");
-		GamepadButton rightStickOperator = new GamepadButton(operatorPad, "RIGHT_JOYSTICK");
-		GamepadButton startOperator = new GamepadButton(operatorPad, "START");
-		
-		//Driver controls
-		leftStickDriver.toggleWhenActive(new ArcadeDriveCreep());
-		
-		leftBumperDriver.whileHeld(new RollIn());
-		rightBumperDriver.whileHeld(new RollOut());
-		leftTriggerDriver.whileHeld(new RollTurnClockwise());
-		rightTriggerDriver.whileHeld(new RollTurnClockwise());
 	
-		//Operator controls
-		leftStickOperator.whileHeld(new LiftManualEncoder());
 		
-		aOperator.whenPressed(new SetLiftBottomEncoder());
-		bOperator.whenPressed(new SetLiftLoadToteEncoder());
-		yOperator.whenPressed(new SetLiftScorePlatformEncoder());
+		aOperator.whenPressed(new DeadTurn(2.0, "left"));
+		bOperator.whenPressed(new DeadTurn(2.0, "right"));
+		yOperator.whenPressed(new DeadStraight(1.0);
 		
-		leftBumperOperator.whenPressed(new SlideIn());
-		leftTriggerOperator.whenPressed(new SlideOut());
-		
-		startOperator.whenPressed(new ZeroLiftEncoder());
+
 	}
 }
