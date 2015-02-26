@@ -23,6 +23,7 @@ public class ArcadeDriveCreep extends Command {
 
 	// Called just before this Command runs the first time
 	protected void initialize() {
+    	Robot.drivetrain.getPIDController().free();
 		currentPower = 0;
 		currentTurn = 0;
 	}
