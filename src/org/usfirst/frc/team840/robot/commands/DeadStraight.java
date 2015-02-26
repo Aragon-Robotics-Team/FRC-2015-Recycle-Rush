@@ -3,19 +3,13 @@ import org.usfirst.frc.team840.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class DeadStraight extends Command {
-
-    private double time;
     
-    public DeadStraight(double t) {
+    public DeadStraight(double time) {
         requires(Robot.drivetrain); 
-        time = t;
+        setTimeout(time);
     }
     protected void initialize() {
-        Robot.drivetrain.setLeft(1.0);
-        Robot.drivetrain.setRight(1.0);
-        Timer.delay(time); 
-        Robot.drivetrain.setLeft(0.0);
-        Robot.drivetrain.setRight(0.0);
+        Robot.drivetrain.arcadeDrive(0.75, 0);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -23,10 +17,11 @@ public class DeadStraight extends Command {
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    return false;
+    return isTimedOut();
     }
     // Called once after isFinished returns true
     protected void end() {
+        Robot.drivetrain.arcadeDrive(0, 0);
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
