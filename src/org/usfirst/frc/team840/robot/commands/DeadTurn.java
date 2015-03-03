@@ -1,35 +1,50 @@
 //do stuff
 
 package org.usfirst.frc.team840.robot.commands;
-//import edu.wpi.first.wpilibj.*;
+
+import org.usfirst.frc.team840.robot.Robot;
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.command.Command;
 
 public class DeadTurn extends Command {
+	
     private double time;
-    private String direction;
+    private boolean directionRight;
   
-    public DeadTurn(double t, String whichDirection) {
-      requires(Robot.drivetrain);
-      time = t;
-      direction = whichDirection;
-      }
-  
-
-  public void initialize () {
-    Timer.delay(time);
-  }
-
-  public void execute () {
-    
-    if (direction.equals("left")){
-      Robot.drivetrain.setLeft(-1.0);
-      Robot.drivetrain.setRight(1.0);
-    } else if (direction.equals("right")) {
-      Robot.drivetrain.setLeft(1.0);
-      Robot.drivetrain.setRight(-1.0);
+    public DeadTurn(double time, boolean right) {
+    	//requires(Robot.drivetrain);
+    	setTimeout(time);
+    	directionRight = right;
     }
-    Timer.delay(time);
-    Robot.drivetrain.setLeft(0.0);
-    Robot.drivetrain.setRight(0.0);
-  }
+  
+	public void initialize () {
+		if (directionRight){
+			Robot.drivetrain.arcadeDrive(0.0, 1.0);
+	    } else if (!directionRight) {
+	    	Robot.drivetrain.arcadeDrive(0.0, -1.0);
+	    }
+	}
+
+	public void execute () {
+	    
+
+	}
+
+	@Override
+	protected boolean isFinished() {
+		// TODO Auto-generated method stub
+		return isTimedOut();
+	}
+
+	@Override
+	protected void end() {
+		Robot.drivetrain.setLeft(0.0);
+	    Robot.drivetrain.setRight(0.0);
+	}
+	
+	@Override
+	protected void interrupted() {
+		// TODO Auto-generated method stub
+	}
 
 }
