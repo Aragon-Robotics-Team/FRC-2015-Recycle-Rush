@@ -11,12 +11,13 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Intake extends Subsystem {
     
-    private Victor intakeMotorLeft, intakeMotorRight;
+    private Victor intakeMotorLeft, intakeMotorRight, intakeMotorSecondary;
     
     public Intake() {
     	super();
     	intakeMotorLeft = new Victor(RobotMap.intakeMotorLeft[0]);
     	intakeMotorRight = new Victor(RobotMap.intakeMotorRight[0]);
+    	intakeMotorSecondary = new Victor(RobotMap.intakeMotorSecondary[0]);
     }
     
     public void setLeft(double power) {	//Positive for rolling in
@@ -25,6 +26,10 @@ public class Intake extends Subsystem {
     
     public void setRight(double power) {	//Positive for rolling in
     	intakeMotorRight.set(power * RobotMap.intakeMotorRight[1]);
+    }
+    
+    public void setSecondary(double power) { //Positive for rolling in
+    	intakeMotorSecondary.set(power * RobotMap.intakeMotorSecondary[1]);
     }
     
     public void initDefaultCommand() {

@@ -17,6 +17,7 @@ public class RollOut extends Command {
     protected void initialize() {
     	Robot.intake.setLeft(-0.75);
     	Robot.intake.setRight(-0.75);
+    	Robot.intake.setSecondary(-0.75);
     }
 
     // Called repeatedly when this Command is scheduled to run
