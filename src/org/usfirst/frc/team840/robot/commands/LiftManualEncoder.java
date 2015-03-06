@@ -27,7 +27,7 @@ public class LiftManualEncoder extends Command {
     	setpoint += -0.5 * Robot.oi.getOperatorPad().getLeftY();	//Add the joystick value to the setpoint. Due to the speed at which commands are called, the max speed it 5 in. / sec 
     	Robot.stacker.setSetpoint(-1 * setpoint);	//Motor is connected backwards
     	SmartDashboard.putNumber("Setpoint", Robot.stacker.getSetpoint());
-    	SmartDashboard.putNumber("Current Distance", Robot.stacker.getPosition());
+    	SmartDashboard.putNumber("Current Distance", Robot.stacker.returnPIDInput());
     }
 
     // Make this return true when this Command no longer needs to run execute()

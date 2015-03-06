@@ -34,14 +34,16 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	SmartDashboard.putNumber("Creep factor: ", 0.5);
     	SmartDashboard.putNumber("Lerp factor: ", 0.125);
-    	
+        	
     	drivetrain = new Drivetrain();
     	intake = new Intake();
     	stacker = new Stacker();
     	pdp = new PDP();
 
     	oi = new OI();
-	}
+
+    	SmartDashboard.putData(stacker);
+    }
 	
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();

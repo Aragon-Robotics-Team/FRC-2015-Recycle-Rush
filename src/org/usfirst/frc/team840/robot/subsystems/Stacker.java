@@ -29,7 +29,7 @@ public class Stacker extends PIDSubsystem {
 	
     // Initialize your subsystem here
     public Stacker() {
-        super("Stacker", .75, 0.0, 0.0);	//TODO Tune PID constants
+        super("Stacker", 3.0, 1.0, .25);	//TODO Tune PID constants
         liftMotor = new Talon(RobotMap.liftMotor[0]);
         liftEncoder = new Encoder(RobotMap.liftEncoder[0], RobotMap.liftEncoder[1]);
         rodlessCylinderLeft = new DoubleSolenoid(1, RobotMap.rodlessCylinderLeft[0], RobotMap.rodlessCylinderLeft[1]);	//TODO Put CAN ID in robot map, but only after merge
@@ -101,7 +101,7 @@ public class Stacker extends PIDSubsystem {
         setDefaultCommand(new HoldLift());
     }
     
-    protected double returnPIDInput() {
+    public double returnPIDInput() {
         return liftEncoder.getDistance();
     }
     
