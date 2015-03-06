@@ -6,7 +6,7 @@ package org.usfirst.frc.team840.robot;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around. Each peripheral is designated an array; formatting is as
  * follows:
- * Victor: Port, direction, PDP port(s)
+ * Talon: Port, direction, PDP port(s)
  */
 public class RobotMap {
     
