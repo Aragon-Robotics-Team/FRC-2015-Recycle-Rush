@@ -42,7 +42,12 @@ public class Robot extends IterativeRobot {
 
     	oi = new OI();
 
+    	SmartDashboard.putData(drivetrain);
+    	SmartDashboard.putData(intake);
     	SmartDashboard.putData(stacker);
+    	SmartDashboard.putData(pdp);
+    	
+    	autonomousCommand = new Autonomous();
     }
 	
 	public void disabledPeriodic() {
