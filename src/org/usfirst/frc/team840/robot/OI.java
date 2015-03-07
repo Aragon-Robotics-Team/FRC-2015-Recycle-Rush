@@ -62,6 +62,7 @@ public class OI {
 		aOperator.whenPressed(new SetLiftBottomEncoder());
 		bOperator.whenPressed(new SetLiftLoadToteEncoder());
 		yOperator.whenPressed(new SetLiftScorePlatformEncoder());
+		xOperator.whenPressed(new Stack());
 		
 		leftBumperOperator.whenPressed(new SlideIn());
 		leftTriggerOperator.whenPressed(new SlideOut());
