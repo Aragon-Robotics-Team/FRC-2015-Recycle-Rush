@@ -10,8 +10,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Stack extends CommandGroup {
     
     public  Stack() {
-        requires(Robot.stacker);
-        
         addSequential(new SetLiftLoadToteEncoder());
         addSequential(new SetLiftBottomEncoder());
         addSequential(new SetLiftLoadToteEncoder());  

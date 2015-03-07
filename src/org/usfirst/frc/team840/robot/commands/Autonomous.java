@@ -10,8 +10,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class Autonomous extends CommandGroup {
     
     public  Autonomous() {
-        requires(Robot.drivetrain);
-        
-        addSequential(new Drive(.5, 0, 2));	//Make real numbers (these are completely random; DO NOT USE THEM)
+        addSequential(new Drive(.5, 0, 2000));	//Make real numbers (these are completely random; DO NOT USE THEM)
     }
 }

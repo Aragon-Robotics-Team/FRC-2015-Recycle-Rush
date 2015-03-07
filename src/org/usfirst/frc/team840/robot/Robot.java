@@ -2,6 +2,7 @@
 package org.usfirst.frc.team840.robot;
 
 import org.usfirst.frc.team840.robot.commands.Autonomous;
+import org.usfirst.frc.team840.robot.commands.Drive;
 import org.usfirst.frc.team840.robot.subsystems.*;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -48,7 +49,7 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putData(stacker);
     	SmartDashboard.putData(pdp);
     	
-    	autonomousCommand = new Autonomous();
+    	autonomousCommand = new Drive(.75, 0, 1.5);
     }
 	
 	public void disabledPeriodic() {
