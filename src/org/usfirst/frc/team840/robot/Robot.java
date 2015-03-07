@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team840.robot;
 
+import org.usfirst.frc.team840.robot.commands.Autonomous;
 import org.usfirst.frc.team840.robot.subsystems.*;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
