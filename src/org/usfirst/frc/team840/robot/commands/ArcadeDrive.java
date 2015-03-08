@@ -40,7 +40,7 @@ public class ArcadeDrive extends Command {
 		lerpedPower = Interpolation.lerp(currentPower, targetPower, lerpFactor);
 		lerpedTurn = Interpolation.lerp(currentTurn, targetTurn, lerpFactor);
 		
-		Robot.drivetrain.arcadeDrive(lerpedPower, -1 * lerpedTurn);
+		Robot.drivetrain.arcadeDrive(-1 * lerpedPower, -1 * lerpedTurn);
 		
 		currentPower = lerpedPower;
 		currentTurn = lerpedTurn;

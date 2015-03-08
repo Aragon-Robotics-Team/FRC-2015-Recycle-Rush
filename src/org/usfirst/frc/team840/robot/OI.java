@@ -58,6 +58,7 @@ public class OI {
 	
 		//Operator controls
 		leftStickOperator.whileHeld(new LiftManualEncoder());
+		//leftStickOperator.whileHeld(new LiftManualFull());
 		
 		aOperator.whenPressed(new SetLiftBottomEncoder());
 		bOperator.whenPressed(new SetLiftLoadToteEncoder());

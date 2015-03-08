@@ -10,10 +10,11 @@ import edu.wpi.first.wpilibj.command.Command;
 public class SetLiftEncoder extends Command {
 
 	private double setpoint;
-	private final double threshold = 0.5;	//TODO Tune experimentally (Units irrelevant, but make sure to match to the units in DistancePerPulse)
+	private final double threshold = 2;	//TODO Tune experimentally (Units irrelevant, but make sure to match to the units in DistancePerPulse)
 	
     public SetLiftEncoder(double setpoint) {
         requires(Robot.stacker);
+        setTimeout(3);
         this.setpoint = setpoint;
     }
 
@@ -28,7 +29,8 @@ public class SetLiftEncoder extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Math.abs(Robot.stacker.getPosition() - setpoint) < threshold;	//Stop the command when it is within the threshold
+        //return Math.abs(Robot.stacker.getPosition() - setpoint) < threshold;	//Stop the command when it is within the threshold
+    	return isTimedOut();
     }
 
     // Called once after isFinished returns true

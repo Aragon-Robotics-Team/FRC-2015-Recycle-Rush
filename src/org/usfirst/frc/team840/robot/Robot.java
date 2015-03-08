@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team840.robot;
 
+import org.usfirst.frc.team840.robot.commands.AutoGrabCoOp;
 import org.usfirst.frc.team840.robot.commands.Autonomous;
 import org.usfirst.frc.team840.robot.commands.Drive;
 import org.usfirst.frc.team840.robot.subsystems.*;
@@ -50,6 +51,7 @@ public class Robot extends IterativeRobot {
     	SmartDashboard.putData(pdp);
     	
     	autonomousCommand = new Drive(.75, 0, 1.5);
+    	//autonomousCommand = new AutoGrabCoOp();
     }
 	
 	public void disabledPeriodic() {
